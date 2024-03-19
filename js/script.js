@@ -176,15 +176,162 @@ ScrollTrigger.create({
   },
 });
 
+// $(".nav li").click(function (e) {
+//   e.preventDefault();
+//   let idx = $(this).index();
+//   //console.log(idx);
+//   $(".nav li a").removeClass("on");
+//   $(".nav li").eq(idx).find("a").addClass("on");
+
+//   let section = $("section").eq(idx);
+//   let sectionDistance = section.offset().top;
+//   console.log(sectionDistance);
+//   $("html,body").stop().animate({ scrollTop: sectionDistance }, 1000);
+// });
+
+function updateSectionPositions() {
+  sectionPositions = [];
+  $("section").each(function () {
+    sectionPositions.push($(this).offset().top);
+  });
+}
+updateSectionPositions();
 $(".nav li").click(function (e) {
   e.preventDefault();
   let idx = $(this).index();
-  //console.log(idx);
+
+  // 해당 섹션으로 스크롤될 때 ScrollTrigger 애니메이션을 트리거
+  if (idx === 0) {
+    $("html, body").stop().animate({ scrollTop: sectionPositions[0] }, 500);
+    intro.restart();
+  } else if (idx === 1) {
+    $("html, body").stop().animate({ scrollTop: sectionPositions[1] }, 500);
+    profile.restart();
+  } else if (idx === 2) {
+    $("html, body").stop().animate({ scrollTop: sectionPositions[2] }, 500);
+    work1.restart();
+  } else if (idx === 3) {
+    $("html, body").stop().animate({ scrollTop: sectionPositions[3] }, 500);
+    work2.restart();
+  } else if (idx === 4) {
+    $("html, body").stop().animate({ scrollTop: sectionPositions[4] }, 500);
+    work3.restart();
+  }
   $(".nav li a").removeClass("on");
   $(".nav li").eq(idx).find("a").addClass("on");
-
-  let section = $("section").eq(idx);
-  let sectionDistance = section.offset().top;
-  console.log(sectionDistance);
-  $("html,body").stop().animate({ scrollTop: sectionDistance }, 1000);
+  // ScrollTrigger 트리거 제거
+  ScrollTrigger.getAll().forEach((trigger) => {
+    trigger.kill();
+  });
+  setTimeout(function () {
+    ScrollTrigger.create({
+      animation: intro,
+      trigger: ".intro",
+      end: "70% 50%",
+      onEnter: () => {
+        $(".nav li a").removeClass("on");
+        $(".nav li").eq(0).find("a").addClass("on");
+      },
+      onLeave: () => {
+        $(".nav li a").removeClass("on");
+        $(".nav li").eq(1).find("a").addClass("on");
+        const nextSection = $(".profile");
+        const scrollTop = nextSection.offset().top;
+        $("html, body").stop().animate({ scrollTop: scrollTop }, 500);
+      },
+    });
+    ScrollTrigger.create({
+      animation: profile,
+      trigger: ".profile",
+      start: "top 1%",
+      pin: true,
+      onEnter: () => {
+        $(".nav li a").removeClass("on");
+        $(".nav li").eq(1).find("a").addClass("on");
+      },
+      onLeave: () => {
+        $(".nav li a").removeClass("on");
+        $(".nav li").eq(2).find("a").addClass("on");
+        const nextSection = $(".work1");
+        const scrollTop = nextSection.offset().top;
+        $("html, body").animate({ scrollTop: scrollTop }, 500);
+      },
+      onLeaveBack: () => {
+        $(".nav li a").removeClass("on");
+        $(".nav li").eq(0).find("a").addClass("on");
+        const prevSection = $(".intro");
+        const scrollTop = prevSection.offset().top;
+        $("html, body").stop().animate({ scrollTop: scrollTop }, 500);
+      },
+    });
+    ScrollTrigger.create({
+      animation: work1,
+      trigger: ".work1",
+      start: "top 1%",
+      //scrub: true,
+      pin: true,
+      onEnter: () => {
+        $(".nav li a").removeClass("on");
+        $(".nav li").eq(2).find("a").addClass("on");
+      },
+      onLeave: () => {
+        $(".nav li a").removeClass("on");
+        $(".nav li").eq(3).find("a").addClass("on");
+        const nextSection = $(".work2");
+        const scrollTop = nextSection.offset().top;
+        $("html, body").stop().animate({ scrollTop: scrollTop }, 500);
+      },
+      onLeaveBack: () => {
+        $(".nav li a").removeClass("on");
+        $(".nav li").eq(1).find("a").addClass("on");
+        const prevSection = $(".profile");
+        const scrollTop = prevSection.offset().top;
+        $("html, body").stop().animate({ scrollTop: scrollTop }, 500);
+      },
+    });
+    ScrollTrigger.create({
+      animation: work2,
+      trigger: ".work2",
+      start: "top 1%",
+      //scrub: true,
+      pin: true,
+      onEnter: () => {
+        $(".nav li a").removeClass("on");
+        $(".nav li").eq(3).find("a").addClass("on");
+      },
+      onLeave: () => {
+        $(".nav li a").removeClass("on");
+        $(".nav li").eq(4).find("a").addClass("on");
+        const nextSection = $(".work3");
+        const scrollTop = nextSection.offset().top;
+        $("html, body").stop().animate({ scrollTop: scrollTop }, 500);
+      },
+      onLeaveBack: () => {
+        $(".nav li a").removeClass("on");
+        $(".nav li").eq(2).find("a").addClass("on");
+        const prevSection = $(".work1");
+        const scrollTop = prevSection.offset().top;
+        $("html, body").stop().animate({ scrollTop: scrollTop }, 500);
+      },
+    });
+    ScrollTrigger.create({
+      animation: work3,
+      trigger: ".work3",
+      start: "top 1%",
+      //scrub: true,
+      pin: true,
+      onEnter: () => {
+        $(".nav li a").removeClass("on");
+        $(".nav li").eq(4).find("a").addClass("on");
+      },
+      onLeaveBack: () => {
+        $(".nav li a").removeClass("on");
+        $(".nav li").eq(3).find("a").addClass("on");
+        const prevSection = $(".work2");
+        const scrollTop = prevSection.offset().top;
+        $("html, body").stop().animate({ scrollTop: scrollTop }, 500);
+      },
+    });
+    ScrollTrigger.refresh();
+  }, 1000);
 });

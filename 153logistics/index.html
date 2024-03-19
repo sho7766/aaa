@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>153로지스틱스</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/media.css" />
+    <link rel="icon" href="images/faviconFile_1679551058_0.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <div class="inner">
+          <h1 class="logo">
+            <a href="#"></a>
+          </h1>
+          <nav>
+            <ul class="deps1">
+              <li>
+                <a href="#">회사소개</a>
+                <ul class="deps2">
+                  <li><a href="#">회사소개</a></li>
+                  <li><a href="#">연혁</a></li>
+                  <li><a href="#">함께하는 파트너사</a></li>
+                  <li><a href="#">운영거점</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">서비스소개</a>
+                <ul class="deps2">
+                  <li><a href="#">풀필먼트</a></li>
+                  <li><a href="#">TV홈쇼핑 물류 대행</a></li>
+                  <li><a href="#">아웃소싱</a></li>
+                  <li><a href="#">물류컨설팅</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">특화서비스</a>
+                <ul class="deps2">
+                  <li><a href="#">굿즈 물류대행 서비스</a></li>
+                  <li><a href="#">코스메틱 라벨링 서비스</a></li>
+                  <li><a href="#">자동화 설비 서비스</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">153로지스틱스 시스템</a>
+                <ul class="deps2">
+                  <li><a href="#">스마트 통합물류시스템</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">고객지원</a>
+                <ul class="deps2">
+                  <li><a href="#">견적/문의</a></li>
+                  <li><a href="#">온라인문의</a></li>
+                  <li><a href="#">FAQ</a></li>
+                </ul>
+              </li>
+              <div class="deps1_bg"></div>
+            </ul>
+          </nav>
+          <div class="share_btn"></div>
+        </div>
+      </header>
+      <div class="main">
+        <div class="swiper mySwiper main_swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide main_one">
+              <div class="txt_box">
+                <div class="inner">
+                  <p class="tit">
+                    <span><span>상품을 담아 가치를 빚다.</span></span>
+                    <span><span>153 LOGISTICS</span></span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide main_two">
+              <div class="txt_box">
+                <div class="inner">
+                  <p class="tit">
+                    <span
+                      ><span
+                        >수많은 고객사들의 선택에는 이유가 있다.</span
+                      ></span
+                    >
+                    <span><span>Differentiation Services</span></span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slide_move">
+            <div class="proBt">
+              <path
+                d="M 50,50 m 0,-46.5 a 46.5,46.5 0 1 1 0,93 a 46.5,46.5 0 1 1 0,-93"
+                stroke="rgba(255,255,255,0.3)"
+                stroke-width="7"
+                fill-opacity="0"
+              ></path>
+              <svg viewBox="0 0 48 48">
+                <circle cx="24" cy="24" r="20"></circle>
+              </svg>
+            </div>
+            <div class="autoplay-progress">
+              <div class="btn">
+                <div class="pause">
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="play"><img src="images/play_btn.svg" alt="" /></div>
+              </div>
+              <path
+                d="M 50,50 m 0,-46.5 a 46.5,46.5 0 1 1 0,93 a 46.5,46.5 0 1 1 0,-93"
+                stroke="rgba(255,255,255,0.3)"
+                stroke-width="7"
+                fill-opacity="0"
+              ></path>
+              <svg viewBox="0 0 48 48">
+                <circle cx="24" cy="24" r="20"></circle>
+              </svg>
+            </div>
+            <div class="page_btn">
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-pagination"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="service">
+        <div class="inner">
+          <div class="tit_box">
+            <p class="tit">
+              153로지스틱스의 <br />
+              다양한 서비스를 확인해 보세요.
+            </p>
+          </div>
+        </div>
+        <div class="fixed_cont">
+          <div class="content_box">
+            <div class="slide_box">
+              <div class="fade_box fade_box1">
+                <div class="eng_tit">fulfillment</div>
+                <div class="tit_box">
+                  <div class="tit">풀필먼트</div>
+                  <div class="txt">
+                    입출고 관리·상품검수·포장·택배배송·창고보관·재고관리까지
+                    <br />
+                    ONE STOP으로 해결해 드립니다.
+                  </div>
+                </div>
+                <div class="view_btn">
+                  <a href="#"
+                    >VIEW MORE
+                    <img src="images/arrow_right.svg" alt="" />
+                  </a>
+                </div>
+              </div>
+              <div class="fade_box fade_box2">
+                <div class="eng_tit">TV Home Shopping Logistics Agency</div>
+                <div class="tit_box">
+                  <div class="tit">TV홈쇼핑 물류대행</div>
+                  <div class="txt">
+                    홈쇼핑 물류가 고민이라면
+                    <br />
+                    A-Z까지 전문 담당자가 해결해 드립니다.
+                  </div>
+                </div>
+                <div class="view_btn">
+                  <a href="#"
+                    >VIEW MORE
+                    <img src="images/arrow_right.svg" alt="" />
+                  </a>
+                </div>
+              </div>
+              <div class="fade_box fade_box3">
+                <div class="eng_tit">outsourcing</div>
+                <div class="tit_box">
+                  <div class="tit">아웃소싱</div>
+                  <div class="txt">
+                    고객사의 요구를 반영한 차별화 된 인력 관리와
+                    <br />
+                    생산성 향상을 위한 솔루션을 제공해 드립니다.
+                  </div>
+                </div>
+                <div class="view_btn">
+                  <a href="#"
+                    >VIEW MORE
+                    <img src="images/arrow_right.svg" alt="" />
+                  </a>
+                </div>
+              </div>
+              <div class="fade_box fade_box4">
+                <div class="eng_tit">Logistics Consulting</div>
+                <div class="tit_box">
+                  <div class="tit">물류컨설팅</div>
+                  <div class="txt">
+                    153로지스틱스의 물류 컨설팅으로 <br />
+                    더 스마트해지고 빨라진 물류 시스템을 만나보세요.
+                  </div>
+                </div>
+                <div class="view_btn">
+                  <a href="#"
+                    >VIEW MORE
+                    <img src="images/arrow_right.svg" alt="" />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="scroll_img">
+              <div class="img_wrap">
+                <div class="img img1">
+                  <img src="images/service1.jpg" alt="service1" />
+                </div>
+                <div class="img img2">
+                  <img src="images/service2.jpg" alt="service1" />
+                </div>
+                <div class="img img3">
+                  <img src="images/service4.jpg" alt="service1" />
+                </div>
+                <div class="img img4">
+                  <img src="images/service3.jpg" alt="service1" />
+                </div>
+              </div>
+            </div>
+            <div class="move_text">
+              <div class="text">
+                <p>
+                  Boost your performance with our Smart Logistics Management
+                  System
+                </p>
+                <p>
+                  Boost your performance with our Smart Logistics Management
+                  System
+                </p>
+                <p>
+                  Boost your performance with our Smart Logistics Management
+                  System
+                </p>
+                <p>
+                  Boost your performance with our Smart Logistics Management
+                  System
+                </p>
+              </div>
+            </div>
+            <div class="move_text_below">
+              <div class="text">
+                <p>
+                  Boost your performance with our Smart Logistics Management
+                  System
+                </p>
+                <p>
+                  Boost your performance with our Smart Logistics Management
+                  System
+                </p>
+                <p>
+                  Boost your performance with our Smart Logistics Management
+                  System
+                </p>
+                <p>
+                  Boost your performance with our Smart Logistics Management
+                  System
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="data">
+        <div class="inner">
+          <div class="tit_box">
+            <p class="tit">
+              물류의 최적화를 향한 <br />
+              153로지스틱스의 노력
+            </p>
+            <p class="txt">
+              153로지스틱스가 이루어 온 성과를 숫자로 확인해 보세요.
+            </p>
+            <p class="txt2">
+              ※ 2022년 1월 ~ 2023년 12월까지 누적 출고량 및 투입인력
+            </p>
+          </div>
+          <div class="number">
+            <div class="cont">
+              <div class="icon">
+                <img src="images/data_icon1.gif" alt="" class="gif" />
+                <img src="images/data_icon1.png" alt="" class="png" />
+              </div>
+              <p class="text"><span>10</span>개</p>
+              <p class="tit">센터 수</p>
+            </div>
+            <div class="cont">
+              <div class="icon">
+                <img src="images/data_icon2.gif" alt="" class="gif" />
+                <img src="images/data_icon2.png" alt="" class="png" />
+              </div>
+              <p class="text"><span>100</span>%</p>
+              <p class="tit">당일출고율</p>
+            </div>
+            <div class="cont">
+              <div class="icon">
+                <img src="images/data_icon3.gif" alt="" class="gif" />
+                <img src="images/data_icon3.png" alt="" class="png" />
+              </div>
+              <p class="text"><span>6,561</span>만</p>
+              <p class="tit">누적출고량</p>
+            </div>
+            <div class="cont">
+              <div class="icon">
+                <img src="images/data_icon4.gif" alt="" class="gif" />
+                <img src="images/data_icon4.png" alt="" class="png" />
+              </div>
+              <p class="text"><span>61,757</span>명</p>
+              <p class="tit">누적투입인력</p>
+            </div>
+            <div class="cont">
+              <div class="icon">
+                <img src="images/data_icon5.gif" alt="" class="gif" />
+                <img src="images/data_icon5.png" alt="" class="png" />
+              </div>
+              <p class="text"><span>108,926</span>㎡</p>
+              <p class="tit">센터크기</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="special">
+        <div class="inner">
+          <div class="tit_box">
+            <p class="tit">
+              153로지스틱스만의 <br />
+              특화 서비스를 확인해보세요.
+            </p>
+          </div>
+          <div class="content">
+            <a href="#" class="con">
+              <div class="img"><img src="images/special1.png" alt="" /></div>
+              <div class="hover_box">
+                <div class="text_box">
+                  <div class="tit">굿즈 물류대행 서비스</div>
+                  <div class="txt">
+                    다양한 SKU, 탄력적 출고, 사전유출 보안 이슈 등 <br />
+                    까다로운 굿즈 물류를 완벽하게 대행해 드립니다.
+                  </div>
+                </div>
+              </div>
+              <div class="con_tit_box">
+                <p class="tit">굿즈 물류대행 서비스</p>
+              </div>
+            </a>
+            <a href="#" class="con">
+              <div class="img"><img src="images/special2.png" alt="" /></div>
+              <div class="hover_box">
+                <div class="text_box">
+                  <div class="tit">코스메틱 라벨링 서비스</div>
+                  <div class="txt">
+                    체계적인 메뉴얼을 통해 다양한 형태의 <br />
+                    코스메틱 제품의 라벨링을 진행하고 있습니다.
+                  </div>
+                </div>
+              </div>
+              <div class="con_tit_box">
+                <p class="tit">코스메틱 라벨링 서비스</p>
+              </div></a
+            >
+            <a href="#" class="con">
+              <div class="img"><img src="images/special3.png" alt="" /></div>
+              <div class="hover_box">
+                <div class="text_box">
+                  <div class="tit">자동화 설비 서비스</div>
+                  <div class="txt">
+                    다양한 자동화 설비를 도입하여 운영하고 있으며,<br />
+                    전문 운영인력을 보유하고 있습니다.
+                  </div>
+                </div>
+              </div>
+              <div class="con_tit_box">
+                <p class="tit">자동화 설비 서비스</p>
+              </div>
+            </a>
+            <div class="pointer">
+              <div class="circle_v">
+                <span class="eng">VIEW</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="onestop">
+        <div class="tit_box">
+          <div class="inner">
+            <p class="tit1">
+              최적화 된 솔루션, <br />
+              ONE STOP 물류 서비스
+            </p>
+            <p class="tit2">153 LOGISTICS ONE STOP</p>
+          </div>
+        </div>
+        <div class="circle_box">
+          <div class="line"></div>
+          <div class="cir cir1">
+            <div class="text_box">
+              <p class="tit">OMS</p>
+              <p class="txt">주문관리 시스템</p>
+            </div>
+          </div>
+          <div class="cir cir2">
+            <div class="text_box">
+              <p class="tit">WMS</p>
+              <p class="txt">창고관리 시스템</p>
+            </div>
+          </div>
+          <div class="cir cir3">
+            <div class="text_box">
+              <p class="tit">GES</p>
+              <p class="txt">해외특송 시스템</p>
+            </div>
+          </div>
+          <div class="line"></div>
+        </div>
+        <div class="icon_box">
+          <div class="inner">
+            <div class="i_con">
+              <div class="i_img">
+                <img src="images/oneStop_icon6.svg" alt="" />
+              </div>
+              <div class="text_box">
+                <p class="tit">주문관리</p>
+                <ul class="txt">
+                  <li><span>.</span> 주문 자동 수집 및 편집</li>
+                  <li><span>.</span> 쇼핑몰 매출 정산</li>
+                </ul>
+              </div>
+            </div>
+            <div class="i_con">
+              <div class="i_img">
+                <img src="images/oneStop_icon1.svg" alt="" />
+              </div>
+              <div class="text_box">
+                <p class="tit">풀필먼트 관리</p>
+                <ul class="txt">
+                  <li><span>.</span> 주주문 별 가용재고 선확인</li>
+                  <li><span>.</span> 합포장/사은품 포장</li>
+                  <li><span>.</span> 유통기한/LOT/선입선출 관리</li>
+                </ul>
+              </div>
+            </div>
+            <div class="i_con">
+              <div class="i_img">
+                <img src="images/oneStop_icon7.svg" alt="" />
+              </div>
+              <div class="text_box">
+                <p class="tit">CS관리</p>
+                <ul class="txt">
+                  <li><span>.</span> CS 일괄수집 및 이력 관리</li>
+                  <li><span>.</span> 고객 클레임 주문 관리</li>
+                </ul>
+              </div>
+            </div>
+            <div class="i_con">
+              <div class="i_img">
+                <img src="images/oneStop_icon3.svg" alt="" />
+              </div>
+              <div class="text_box">
+                <p class="tit">국내외 택배관리</p>
+                <ul class="txt">
+                  <li><span>.</span>송장정보 선등록</li>
+                  <li>
+                    <span>.</span>송장 별 배송추적 및 업데이트 주소정보 자동정제
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="capa">
+        <div class="inner">
+          <div class="tit_box">
+            <p class="tit">
+              153로지스틱스의 <br />서비스 역량을 확인해 보세요.
+            </p>
+          </div>
+          <div class="scroll_cont">
+            <div class="cont_wrap">
+              <div class="cont cont1">
+                <div class="img_box">
+                  <div class="img">
+                    <img src="images/scroll_sect_icon1.png" alt="" />
+                  </div>
+                </div>
+                <div class="text_box">
+                  <p class="num">01</p>
+                  <p class="tit">최신 설비 운영</p>
+                  <p class="txt">
+                    대형 물류센터 운영을 통한 <br />
+                    최신 설비 운영 능력 보유
+                  </p>
+                </div>
+              </div>
+              <div class="cont cont2">
+                <div class="img_box">
+                  <div class="img">
+                    <img src="images/scroll_sect_icon2.png" alt="" />
+                  </div>
+                </div>
+                <div class="text_box">
+                  <p class="num">02</p>
+                  <p class="tit">고객 관리</p>
+                  <p class="txt">
+                    홈쇼핑, 이커머스 물류 운영에 따른 <br />월 1,500건 내외의 CS
+                    처리 능력 보유
+                  </p>
+                </div>
+              </div>
+              <div class="cont cont3">
+                <div class="img_box">
+                  <div class="img">
+                    <img src="images/scroll_sect_icon3.png" alt="" />
+                  </div>
+                </div>
+                <div class="text_box">
+                  <p class="num">03</p>
+                  <p class="tit">대량 물량 처리</p>
+                  <p class="txt">
+                    엔터 굿즈, 이커머스 물량 등<br />주당 약 20만건 물량 처리
+                    가능
+                  </p>
+                </div>
+              </div>
+              <div class="cont cont4">
+                <div class="img_box">
+                  <div class="img">
+                    <img src="images/scroll_sect_icon4.png" alt="" />
+                  </div>
+                </div>
+                <div class="text_box">
+                  <p class="num">04</p>
+                  <p class="tit">코스메틱</p>
+                  <p class="txt">
+                    코스메틱 라벨링 설비 보유 및 <br />법적 규제에 대한 전문성
+                    보유
+                  </p>
+                </div>
+              </div>
+              <div class="cont cont5">
+                <div class="img_box">
+                  <div class="img">
+                    <img src="images/scroll_sect_icon5.png" alt="" />
+                  </div>
+                </div>
+                <div class="text_box">
+                  <p class="num">05</p>
+                  <p class="tit">유연한 택배 출고</p>
+                  <p class="txt">
+                    CJ대한통운, 롯데택배 대리점 코드 보유로 <br />어떠한
+                    상황에서도 유연한 택배 출고 가능
+                  </p>
+                </div>
+              </div>
+              <div class="cont cont6">
+                <div class="img_box">
+                  <div class="img">
+                    <img src="images/scroll_sect_icon6.png" alt="" />
+                  </div>
+                </div>
+                <div class="text_box">
+                  <p class="num">06</p>
+                  <p class="tit">
+                    신규 물류센터 <br />
+                    SET-UP
+                  </p>
+                  <p class="txt">
+                    홈쇼핑, 이커머스 물류센터 이전 및 <br />안정화 능력 보유
+                  </p>
+                </div>
+              </div>
+              <div class="cont cont7">
+                <div class="img_box">
+                  <div class="img">
+                    <img src="images/scroll_sect_icon7.png" alt="" />
+                  </div>
+                </div>
+                <div class="text_box">
+                  <p class="num">07</p>
+                  <p class="tit">홈쇼핑 물류 운영 <br />노하우</p>
+                  <p class="txt">
+                    15년간의 홈쇼핑 물류 운영 노하우를 기반으로 <br />발송 일정
+                    별 물품 관리 및 센터 입고, <br />직택배 출고 가능,
+                    반품/양품화/반출 가능
+                  </p>
+                </div>
+              </div>
+              <div class="cont cont8">
+                <div class="img_box">
+                  <div class="img">
+                    <img src="images/scroll_sect_icon8.png" alt="" />
+                  </div>
+                </div>
+                <div class="text_box">
+                  <p class="num">08</p>
+                  <p class="tit">다양한 상품 취급</p>
+                  <p class="txt">
+                    의류/잡화/코스메틱/가전/생활/
+                    <br />식품(상온)/건강/도서/굿즈 등 <br />
+                    다양한 상품 카테고리 취급
+                  </p>
+                </div>
+              </div>
+              <div class="cont cont9">
+                <div class="img_box">
+                  <div class="img">
+                    <img src="images/scroll_sect_icon9.png" alt="" />
+                  </div>
+                </div>
+                <div class="text_box">
+                  <p class="num">09</p>
+                  <p class="tit">안전한 작업 환경</p>
+                  <p class="txt">
+                    작업자의 안전과 고객의 자산을 지키기 위해 <br />안전관리팀
+                    운영 및 정기교육 실시
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="partner">
+        <div class="inner">
+          <div class="tit_box">
+            <p class="tit">
+              다양한 파트너사와 함께 <br />성장하고 있는 153로지스틱스
+            </p>
+          </div>
+          <div class="logo_wrap">
+            <div class="logo_box">
+              <div class="logo">
+                <img src="images/file_1679469652_0.svg" alt="" />
+              </div>
+              <div class="logo">
+                <img src="images/file_1679469595_0.svg" alt="" />
+              </div>
+              <div class="logo">
+                <img src="images/file_1679469546_0.svg" alt="" />
+              </div>
+              <div class="logo">
+                <img src="images/file_1679469533_0.svg" alt="" />
+              </div>
+              <div class="logo">
+                <img src="images/file_1679469517_0.svg" alt="" />
+              </div>
+              <div class="logo">
+                <img src="images/file_1679469580_0.svg" alt="" />
+              </div>
+              <div class="logo">
+                <img src="images/file_1679469433_0.svg" alt="" />
+              </div>
+              <div class="logo">
+                <img src="images/file_1679530173_0.svg" alt="" />
+              </div>
+              <div class="logo">
+                <img src="images/file_1679530230_0.svg" alt="" />
+              </div>
+              <div class="logo">
+                <img src="images/file_1679530309_0.svg" alt="" />
+              </div>
+              <div class="logo">
+                <img src="images/file_1679530341_0.svg" alt="" />
+              </div>
+              <div class="logo">
+                <img src="images/file_1679530377_0.svg" alt="" />
+              </div>
+              <div class="logo">
+                <img src="images/file_1679531257_0.svg" alt="" />
+              </div>
+              <div class="logo">
+                <img src="images/file_1679532396_0.svg" alt="" />
+              </div>
+              <div class="logo">
+                <img src="images/file_1679532421_0.svg" alt="" />
+              </div>
+            </div>
+            <div class="view_btn">
+              <a href="#"
+                >VIEW MORE
+                <img src="images/arrow_right.svg" alt="" />
+              </a>
+            </div>
+          </div>
+          <div class="banner">
+            <div class="text_box">
+              <p class="tit">
+                153로지스틱스와 함께 더 빠르고 정확한 <br />
+                스마트 물류관리를 시작해 보세요!
+              </p>
+              <div class="view_btn">
+                <a href="#"
+                  >견적/문의하기
+                  <img src="images/arrow_right.svg" alt="" />
+                </a>
+              </div>
+            </div>
+            <div class="img_box"><img src="images/banner.png" alt="" /></div>
+          </div>
+        </div>
+      </section>
+      <footer>
+        <div class="goTop_btn">
+          <button class="goTop">
+            <img src="images/arrow_top.svg" alt="arrow top" />
+          </button>
+        </div>
+        <div class="inner">
+          <div class="left_box">
+            <div class="logo">
+              <img src="images/logo_b.svg" alt="logo black" />
+            </div>
+            <div class="text">
+              <p class="footer_info">
+                <a href="#">개인정보처리방침</a>
+                경기도 군포시 고산로 148번길 17, 군포IT밸리 B동 1801호<br />사업자번호
+                101-86-93427 문의전화 031-8068-5153<br />
+                팩스 031-8068-6153 이메일 customer@153logistics.com
+              </p>
+              <div class="copyright">© 2023 153로지스틱스.</div>
+            </div>
+          </div>
+          <div class="right_box">
+            <div class="nav_footer">
+              <a href="#">회사소개</a>
+              <a href="#">서비스소개</a>
+              <a href="#">특화서비스</a>
+              <a href="#">153로지스틱스 시스템</a>
+              <a href="#">고객지원</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      const progressCircle = document.querySelector(".autoplay-progress svg");
+      const progressContent = document.querySelector(".autoplay-progress span");
+      var swiper = new Swiper(".mySwiper", {
+        effect: "fade",
+        autoplay: {
+          delay: 10000,
+          disableOnInteraction: false,
+        },
+        rewind: true,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          type: "fraction",
+        },
+        on: {
+          autoplayTimeLeft(s, time, progress) {
+            progressCircle.style.setProperty("--progress", 1 - progress);
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+@media (max-width: 2000px) {
+  .main .inner,
+  .special .inner,
+  .onestop .inner,
+  .slide_move,
+  .service .txt_box {
+    width: 1400px;
+  }
+  .service .txt_box .tit,
+  .tit_box {
+    font-size: 48px;
+  }
+  .service .fixed_cont .slide_box {
+    left: max(calc((100% - 1440px) / 2 +20px), 20px);
+  }
+  .capa .scroll_cont .cont_wrap .cont .text_box .tit {
+    font-size: 40px;
+  }
+}

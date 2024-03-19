@@ -1,0 +1,229 @@
+@charset "utf-8";
+@font-face {
+  font-family: Pretendard;
+  src: url(../../webfonts/Pretendard-Regular.woff) format("woff");
+  font-family: Montserrat;
+  src: url(../../webfonts/Montserrat-Regular.ttf);
+  font-family: Montserrat;
+  src: url(../../webfonts/Montserrat-Bold.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+img {
+  object-fit: cover;
+  max-width: 100%;
+}
+body {
+  font-family: Pretendard;
+  font-size: 17px;
+  line-height: 1.5;
+}
+.wrap {
+  width: 100%;
+  height: 100vh;
+}
+.inner {
+  /* position: relative; */
+  width: 1400px;
+  max-width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+.tit {
+  font-style: 48px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.service {
+  padding-top: 240px;
+}
+.service .inner .tit_box .tit {
+  font-size: 48px;
+}
+.service .fixed_cont {
+  position: relative;
+  width: 100%;
+  height: calc(800vh);
+  margin-top: 120px;
+}
+.service .fixed_cont.on .content_box {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.service .fixed_cont.end .content_box {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+}
+.service .fixed_cont .slide_box {
+  position: absolute;
+  top: 160px;
+  left: calc((100% - 1440px) / 2 + 20px);
+  width: 100%;
+  height: 100vh;
+}
+.service .fade_box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: all 1s;
+}
+.fade_box.fade_box1 {
+  opacity: 1;
+}
+.service .fade_box.on {
+  opacity: 1;
+}
+.service .fade_box .eng_tit {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: #1947ba;
+  text-transform: uppercase;
+}
+.service .fade_box .tit_box {
+  margin-top: 60px;
+}
+.service .fade_box .tit_box .tit {
+  font-size: 48px;
+}
+.service .fade_box .tit_box .txt {
+  font-size: 23px;
+  margin-top: 15px;
+}
+.service .fade_box .view_btn {
+  margin-top: 100px;
+}
+.service .fade_box .view_btn a {
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 12px;
+}
+.service .fade_box .view_btn a:after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: #000;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.service .fade_box .view_btn img {
+  width: 15px;
+  margin-left: 20px;
+  padding-top: 8px;
+  scale: 1.3;
+}
+.service .scroll_img {
+  position: absolute;
+  top: 160px;
+  left: 60%;
+  width: 100%;
+  height: 100vh;
+  max-width: 2000px;
+  min-width: 1600px;
+}
+.service .scroll_img .img_wrap {
+  display: flex;
+  align-items: flex-start;
+  transition: transform 1s ease-out;
+}
+.service .scroll_img .img_wrap .img {
+  width: 35%;
+  flex-shrink: 0;
+  filter: grayscale(100%);
+  overflow: hidden;
+  transform: translateY(20%);
+  transition: all 1s;
+}
+.service .scroll_img .img_wrap .img.on {
+  filter: none;
+  transform: translateY(0);
+  border-radius: 0;
+  margin-top: 0;
+}
+.service .scroll_img .img_wrap .img.end {
+  opacity: 0;
+}
+.service .scroll_img .img_wrap .img img {
+  transform: scale(0.5);
+  transition: all 1s;
+  border-radius: 300px;
+}
+.service .scroll_img .img_wrap .img.on img {
+  transform: scale(0.8);
+  border-radius: 0;
+}
+.service .scroll_img .img_wrap .img:nth-child(2n) {
+  transform: translateY(100%);
+}
+.service .scroll_img .img_wrap .img:nth-child(2n).on {
+  transform: translateY(25%);
+}
+.service .scroll_img .img_wrap .img:nth-child(2n).on img {
+  transform: scale(1);
+}
+.service .move_text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+.service .text {
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.service .text p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 8vw;
+  font-weight: 700;
+  animation: textLoop 50s linear infinite;
+  color: #f5f6f8;
+  text-transform: uppercase;
+  padding-right: 20px;
+}
+.service .move_text_below {
+  position: absolute;
+  transform: translateY(100%);
+  bottom: 40px;
+}
+.service .move_text_below .text p {
+  animation: textLoop2 50s linear infinite;
+  color: #f5f6f8;
+}
+@keyframes textLoop {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+@keyframes textLoop2 {
+  0% {
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
