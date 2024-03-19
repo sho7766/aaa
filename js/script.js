@@ -189,12 +189,15 @@ ScrollTrigger.create({
 //   $("html,body").stop().animate({ scrollTop: sectionDistance }, 1000);
 // });
 
+// 윈도우 스크롤 이벤트 핸들러
 function updateSectionPositions() {
   sectionPositions = [];
   $("section").each(function () {
     sectionPositions.push($(this).offset().top);
   });
 }
+
+// 페이지 로드 시 초기화
 updateSectionPositions();
 $(".nav li").click(function (e) {
   e.preventDefault();
@@ -244,7 +247,6 @@ $(".nav li").click(function (e) {
       animation: profile,
       trigger: ".profile",
       start: "top 1%",
-      pin: true,
       onEnter: () => {
         $(".nav li a").removeClass("on");
         $(".nav li").eq(1).find("a").addClass("on");
@@ -254,7 +256,7 @@ $(".nav li").click(function (e) {
         $(".nav li").eq(2).find("a").addClass("on");
         const nextSection = $(".work1");
         const scrollTop = nextSection.offset().top;
-        $("html, body").animate({ scrollTop: scrollTop }, 500);
+        $("html, body").stop().animate({ scrollTop: scrollTop }, 500);
       },
       onLeaveBack: () => {
         $(".nav li a").removeClass("on");
@@ -268,8 +270,6 @@ $(".nav li").click(function (e) {
       animation: work1,
       trigger: ".work1",
       start: "top 1%",
-      //scrub: true,
-      pin: true,
       onEnter: () => {
         $(".nav li a").removeClass("on");
         $(".nav li").eq(2).find("a").addClass("on");
@@ -294,7 +294,6 @@ $(".nav li").click(function (e) {
       trigger: ".work2",
       start: "top 1%",
       //scrub: true,
-      pin: true,
       onEnter: () => {
         $(".nav li a").removeClass("on");
         $(".nav li").eq(3).find("a").addClass("on");
@@ -319,7 +318,6 @@ $(".nav li").click(function (e) {
       trigger: ".work3",
       start: "top 1%",
       //scrub: true,
-      pin: true,
       onEnter: () => {
         $(".nav li a").removeClass("on");
         $(".nav li").eq(4).find("a").addClass("on");

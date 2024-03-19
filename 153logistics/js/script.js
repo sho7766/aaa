@@ -63,7 +63,7 @@ ScrollTrigger.create({
 });
 let ani2 = gsap.timeline();
 ani2
-  .from(".data .tit", { x: 100, autoAlpha: 0, duration: 1 })
+  .from(".data .tit_box .tit", { x: 100, autoAlpha: 0, duration: 1 })
   .from(".data .txt", { x: 100, autoAlpha: 0, duration: 1 })
   .from(".data .txt2", { x: 100, autoAlpha: 0, duration: 1 });
 ScrollTrigger.create({

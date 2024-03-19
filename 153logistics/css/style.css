@@ -441,6 +441,9 @@ header .inner nav .deps1 li .deps2 > li:hover a::before {
 .service .fade_box .tit_box {
   margin-top: 60px;
 }
+.service .fade_box .tit_box .ko_tit {
+  font-size: 48px;
+}
 .service .fade_box .tit_box .txt {
   font-size: 23px;
   margin-top: 15px;
