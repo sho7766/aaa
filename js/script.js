@@ -247,6 +247,7 @@ $(".nav li").click(function (e) {
       animation: profile,
       trigger: ".profile",
       start: "top 1%",
+      end: "70% 50%",
       onEnter: () => {
         $(".nav li a").removeClass("on");
         $(".nav li").eq(1).find("a").addClass("on");
@@ -270,6 +271,7 @@ $(".nav li").click(function (e) {
       animation: work1,
       trigger: ".work1",
       start: "top 1%",
+      end: "70% 50%",
       onEnter: () => {
         $(".nav li a").removeClass("on");
         $(".nav li").eq(2).find("a").addClass("on");
@@ -293,6 +295,7 @@ $(".nav li").click(function (e) {
       animation: work2,
       trigger: ".work2",
       start: "top 1%",
+      end: "70% 50%",
       //scrub: true,
       onEnter: () => {
         $(".nav li a").removeClass("on");
@@ -317,6 +320,7 @@ $(".nav li").click(function (e) {
       animation: work3,
       trigger: ".work3",
       start: "top 1%",
+      end: "70% 50%",
       //scrub: true,
       onEnter: () => {
         $(".nav li a").removeClass("on");

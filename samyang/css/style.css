@@ -254,7 +254,7 @@ header .logo_ko {
   /* overflow: hidden; */
 }
 .brand .left {
-  width: 50%;
+  width: 30%;
   padding-top: 9vw;
   padding-bottom: 7vw;
   padding-inline-start: 9vw;
@@ -262,7 +262,6 @@ header .logo_ko {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
 }
 .brand .left .tit {
   text-align: left;
@@ -283,21 +282,45 @@ header .logo_ko {
   display: flex;
   flex-direction: column;
 }
-.swiper {
+.brand .left .content .swiper {
+  position: relative;
   width: 100%;
   height: 100%;
+  margin-bottom: 1vw;
+  border-radius: 1vw;
 }
-.swiper-slide {
-  text-align: center;
+.brand .left .content .swiper-slide {
+  width: 25vw;
+  margin-bottom: 1vw;
   font-size: 18px;
   background: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+
+  text-align: center;
 }
-.swiper-slide img {
+.brand .left .content .swiper-slide img {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 25vw;
+  height: 26vw;
+  border-radius: 1vw;
   object-fit: cover;
+}
+.slide_btn {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 105%;
+  z-index: 99;
+}
+.brand .right {
+  width: 52%;
+}
+.brand .right .swiper img {
+  width: 100%;
+  height: 56vw;
 }

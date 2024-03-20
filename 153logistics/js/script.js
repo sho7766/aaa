@@ -53,57 +53,33 @@ $(".autoplay-progress .btn").on("click", function () {
   $(this).toggleClass("on");
 });
 
-// // section .tit 스크롤 효과
-let ani1 = gsap.timeline();
-ani1.from(".service .inner .tit", { x: -100, autoAlpha: 0, duration: 1 });
+// section .tit 스크롤 효과
+let service = gsap.timeline();
+service.from(".service .inner .tit_box .tit", {
+  x: -100,
+  autoAlpha: 0,
+  duration: 1,
+});
 ScrollTrigger.create({
-  animation: ani1,
+  animation: service,
   trigger: ".service",
   start: "top 70%",
+  end: "70% 50%",
 });
-let ani2 = gsap.timeline();
-ani2
-  .from(".data .tit_box .tit", { x: 100, autoAlpha: 0, duration: 1 })
-  .from(".data .txt", { x: 100, autoAlpha: 0, duration: 1 })
-  .from(".data .txt2", { x: 100, autoAlpha: 0, duration: 1 });
 ScrollTrigger.create({
-  animation: ani2,
-  trigger: ".data",
-  start: "top 70%",
+  trigger: ".fixed_cont",
+  start: "top 1%",
+  pin: true,
+  scrub: true,
+  toggleClass: "on",
 });
-let ani3 = gsap.timeline();
-ani3.from(".special .tit_box .tit", { x: -100, autoAlpha: 0, duration: 1 });
+let fade_box = gsap.timeline();
+fade_box.to(".fade_box1", { opacity: 0, duration: 0.1 });
 ScrollTrigger.create({
-  animation: ani3,
-  trigger: ".special",
-  start: "top 90%",
-});
-let ani4 = gsap.timeline();
-ani4
-  .from(".onestop .tit1", { x: -100, autoAlpha: 0, duration: 1 })
-  .from(".onestop .tit2", {
-    x: -100,
-    autoAlpha: 0,
-    duration: 1,
-  });
-ScrollTrigger.create({
-  animation: ani4,
-  trigger: ".onestop",
-  start: "top 90%",
-});
-let ani5 = gsap.timeline();
-ani5.from(".capa .tit_box .tit", { x: -100, autoAlpha: 0, duration: 1 });
-ScrollTrigger.create({
-  animation: ani5,
-  trigger: ".capa",
-  start: "top 70%",
-});
-let ani6 = gsap.timeline();
-ani6.from(".partner .tit", { x: -100, autoAlpha: 0, duration: 1 });
-ScrollTrigger.create({
-  animation: ani6,
-  trigger: ".partner",
-  start: "top 70%",
+  animation: fade_box,
+  trigger: ".slide_box",
+  scrub: true,
+  markers: true,
 });
 
 // .special section 마우스이벤트
@@ -138,48 +114,18 @@ $(window).scroll(function () {
   }
 });
 
-gsap.to(".fade_box1", {
-  autoAlpha: 0,
-  scrollTrigger: { scrub: true, trigger: ".fade_box1" },
-});
+let number = document.querySelectorAll(".number .text span");
+let interval = 5000;
 
-gsap.to(".fade_box2", {
-  autoAlpha: 1,
-
-  scrollTrigger: { scrub: true, trigger: ".fade_box2" },
-});
-
-gsap.to(".fixed_cont", {
-  xPercent: -100,
-  x: () => innerWidth,
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".fixed_cont",
-    end: () => innerWidth * 4,
-    scrub: true,
-    pin: true,
-    toggleClass: "on",
-  },
-});
-gsap.to(".scroll_img", {
-  x: -500,
-  // autoAlpha: 0,
-  scrollTrigger: {
-    scrub: true,
-    trigger: ".img_wrap .img",
-    start: 2000,
-    end: 2500,
-    toggleClass: "on",
-  },
-});
-gsap.to(".scroll_img", {
-  x: -2500,
-  // autoAlpha: 0,
-  scrollTrigger: {
-    scrub: true,
-    trigger: ".img_wrap .img:nth-child(2n)",
-    start: 2500,
-    end: 4000,
-    toggleClass: "on",
-  },
+number.forEach((number) => {
+  let startNumber = 0;
+  let endNumber = parseInt(number.getAttribute("data-val"));
+  let duration = Math.floor(interval / endNumber);
+  let counter = setInterval(function () {
+    startNumber += 1;
+    number.textContent = startNumber;
+    if (startNumber == endNumber) {
+      clearInterval(counter);
+    }
+  });
 });
