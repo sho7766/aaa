@@ -91,6 +91,146 @@ header .logo_ko {
   font-size: 15px;
   font-weight: 500;
 }
+.drop_box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;
+  width: 1820px;
+  transform: translate(0);
+  background: #fff;
+  z-index: 9999;
+}
+.drop_box header.white {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 0 1 0;
+  height: 40px;
+  padding: 16px 50px;
+  border: 1px solid rgba(50, 50, 50, 0.5);
+}
+header.white a {
+  cursor: pointer;
+}
+header.white a svg {
+  width: 210px;
+  height: 100%;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+header.white svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.drop_menu {
+  flex: 1 1 0;
+  /* overflow: auto; */
+  padding: 0;
+}
+.drop_menu .boxes {
+  position: relative;
+  height: 645px;
+  display: flex;
+}
+.drop_menu .boxes .menu_left {
+  position: relative;
+  padding-top: 40px;
+  padding-inline: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 0;
+  flex: 2 1 0;
+}
+.drop_menu .boxes .menu_left .menu_wrap {
+  position: relative;
+  display: flex;
+}
+.menu_left .menu_wrap .main_menu {
+  margin-right: 5vw;
+}
+.menu_left .menu_wrap .main_menu li {
+  margin-bottom: 0.6vw;
+  font-size: 40px;
+  line-height: 54px;
+}
+.menu_left .menu_wrap .main_menu li a {
+  color: #000;
+}
+.menu_left .menu_wrap .sub_menu {
+  position: relative;
+}
+.menu_left .menu_wrap .sub_menu > div {
+  /* position: absolute; */
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  padding-top: 14px;
+}
+.menu_left .menu_wrap .sub_menu .group {
+  display: none;
+}
+.menu_left .menu_wrap .sub_menu .business div {
+  width: 398px;
+  height: 100%;
+}
+.menu_left .menu_wrap .sub_menu a {
+  color: #323232;
+  font-size: 17px;
+}
+.drop_menu .boxes .menu_left .lang {
+  display: flex;
+  justify-content: right;
+  width: 100%;
+}
+.drop_menu .boxes .menu_left .lang div {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 30px;
+  padding-bottom: 40px;
+  height: 30px;
+  font-size: 20px;
+}
+.drop_menu .boxes .menu_left .lang div p {
+  font-weight: 500;
+  color: #000;
+  cursor: pointer;
+}
+.drop_menu .boxes .menu_left .lang div hr {
+  width: 2px;
+  height: 20px;
+  background: #c1c1c1;
+  margin: 0 8px;
+  border: none;
+  opacity: 0.6;
+}
+.drop_menu .boxes .menu_right {
+  position: relative;
+  height: 100%;
+  flex: 1.4 1 0;
+}
+.drop_menu .boxes .menu_right img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  object-fit: cover;
+}
 .container {
   width: calc(100vw - (100vw - 100%));
   padding-top: 70px;
@@ -298,7 +438,6 @@ header .logo_ko {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
   text-align: center;
 }
 .brand .left .content .swiper-slide img {
