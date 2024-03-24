@@ -1,11 +1,11 @@
 @charset "utf-8";
 @font-face {
   font-family: Pretendard;
-  src: url(../../webfonts/Pretendard-Regular.woff) format("woff");
+  src: url(../../webfonts/PretendardVariable.woff2) format("woff2");
 }
 @font-face {
   font-family: Poppins;
-  src: url(../../webfonts/Poppins-Regular.ttf) format("woff");
+  src: url(../../webfonts/Poppins-Medium.woff) format("woff");
 }
 
 * {
@@ -37,6 +37,7 @@ header {
   align-items: center;
   position: fixed;
   transition: all 0.3s;
+  z-index: 9999;
 }
 header .menu {
   width: 548px;
@@ -262,6 +263,7 @@ header .logo_ko {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
 }
 .brand .left .tit {
   text-align: left;
@@ -306,6 +308,7 @@ header .logo_ko {
   height: 26vw;
   border-radius: 1vw;
   object-fit: cover;
+  margin-bottom: 1vw;
 }
 .slide_btn {
   display: flex;
@@ -315,6 +318,12 @@ header .logo_ko {
   left: 0;
   width: 105%;
   z-index: 99;
+}
+.slide_txt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
 }
 .brand .right {
   width: 52%;
@@ -331,15 +340,58 @@ header .logo_ko {
   height: 100vh;
   background: rgba(0, 0, 0, 0.48);
 }
-.drop_container {
+.now {
+  padding-top: 8vw;
+  padding-bottom: 8vw;
+  padding-inline-start: 9vw;
+  padding-inline-end: 9vw;
   display: flex;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
+  gap: 3vw;
+  background: #fdf8f5;
+}
+.now .tit_box {
+  padding-top: 2vw;
+  border-top: 3px solid #f7decb;
+  flex: 1;
+}
+.now .tit_box .eng_tit {
+  font-size: 28px;
+  font-weight: 600;
+  font-family: Poppins;
+  line-height: 34px;
+  margin-bottom: 1vw;
+}
+.now .tit_box .ko_tit {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 130%;
+}
+.now .news_box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 2;
+}
+.now .news_box div {
+  position: relative;
+  width: 47%;
+  min-height: 12.5vw;
+  border-top: 3px solid #f7decb;
+}
+.now .news_box .cont1 .cont_txt .sub_tit {
+  width: 100%;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: keep-all;
+}
+.now .news_box .cont1 .cont1 svg {
+  fill: transparent;
 }
 .drop_box {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -404,25 +456,80 @@ header.white svg {
   line-height: 54px;
 }
 .menu_left .menu_wrap .main_menu li a {
+  font-family: Poppins;
   color: #000;
+}
+.menu_left .menu_wrap .main_menu li:hover a {
+  color: #000;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-decoration-skip-ink: none;
 }
 .menu_left .menu_wrap .sub_menu {
   position: relative;
+  padding-top: 14px;
+  width: 398px;
 }
 .menu_left .menu_wrap .sub_menu > div {
-  /* position: absolute; */
-  align-self: start;
+  flex-direction: column;
+  gap: 24px;
+}
+.menu_left .menu_wrap .sub_menu > div {
+  position: absolute;
+  display: flex;
+}
+.menu_left .menu_wrap .sub_menu .tit {
+  font-weight: 600;
+  line-height: 24px;
+}
+.menu_left .menu_wrap .sub_menu .tit:hover {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+}
+.menu_left .menu_wrap .sub_menu .small_menu {
+  margin-top: 6px;
+  font-weight: 400;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 24px;
-  padding-top: 14px;
+  gap: 4px;
 }
-.menu_left .menu_wrap .sub_menu .group {
-  display: none;
+.menu_left .menu_wrap .sub_menu .small_menu a {
+  font-size: 15px;
+  line-height: 24px;
+}
+.menu_left .menu_wrap .sub_menu .group a,
+.menu_left .menu_wrap .sub_menu .brands a.tit {
+  font-family: Poppins;
+  font-weight: 500;
+}
+.menu_left .menu_wrap .sub_menu .business > div {
+  display: flex;
+  flex-flow: wrap;
+  /* width: 398px; */
+}
+.menu_left .menu_wrap .sub_menu .business > div > div {
+  margin-bottom: 24px;
+  width: 50%;
+}
+.menu_left .menu_wrap .sub_menu .business > div .food {
+  order: 0;
+}
+.menu_left .menu_wrap .sub_menu .business > div .network {
+  order: 2;
+}
+.menu_left .menu_wrap .sub_menu .business > div .culture {
+  order: 4;
+}
+.menu_left .menu_wrap .sub_menu .business > div .esg {
+  order: 1;
+}
+.menu_left .menu_wrap .sub_menu .business > div .esg .tit {
+  font-family: Poppins;
+}
+.menu_left .menu_wrap .sub_menu .business > div .bio {
+  order: 3;
 }
 .menu_left .menu_wrap .sub_menu .business div {
-  width: 398px;
   height: 100%;
 }
 .menu_left .menu_wrap .sub_menu a {
@@ -445,7 +552,7 @@ header.white svg {
 }
 .drop_menu .boxes .menu_left .lang div p {
   font-weight: 500;
-  color: #000;
+  color: #848484;
   cursor: pointer;
 }
 .drop_menu .boxes .menu_left .lang div hr {
