@@ -22,7 +22,7 @@ a {
 body {
   color: #323232;
   font-family: Pretendard;
-  font-weight: 100;
+  font-weight: 300;
 }
 .wrap {
   max-width: calc(100vw- (100vw - 100%));
@@ -93,24 +93,31 @@ header .logo_ko {
   font-weight: 500;
 }
 .container {
-  width: calc(100vw - (100vw - 100%));
+  height: 100vh;
   padding-top: 70px;
+}
+.main_wrap {
+  max-width: calc(100vw - (100vw - 100%));
   margin: 0 auto;
+  overflow-x: hidden;
 }
 .video {
   position: relative;
   width: 100%;
-  height: 880px;
+  height: 888px;
 }
 .video video {
+  position: absolute;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  inset: 0;
+  overflow: hidden;
 }
 .read_more {
   position: absolute;
   left: 50%;
-  bottom: 3.8vw;
+  bottom: 3vw;
   transform: translate(-50%);
 }
 .read_more button {
@@ -135,6 +142,8 @@ header .logo_ko {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-family: Poppins;
+  font-weight: 500;
 }
 .read_more button svg {
   position: absolute;
@@ -255,7 +264,7 @@ header .logo_ko {
   /* overflow: hidden; */
 }
 .brand .left {
-  width: 30%;
+  width: 50%;
   padding-top: 9vw;
   padding-bottom: 7vw;
   padding-inline-start: 9vw;
@@ -264,6 +273,8 @@ header .logo_ko {
   flex-direction: column;
   justify-content: center;
   position: relative;
+  text-align: center;
+  box-sizing: border-box;
 }
 .brand .left .tit {
   text-align: left;
@@ -272,6 +283,7 @@ header .logo_ko {
   font-size: 28px;
   line-height: 34px;
   font-weight: 600;
+  font-family: Poppins;
 }
 .brand .left .tit p:nth-child(2) {
   font-size: 20px;
@@ -288,12 +300,8 @@ header .logo_ko {
   position: relative;
   width: 100%;
   height: 100%;
-  margin-bottom: 1vw;
-  border-radius: 1vw;
 }
 .brand .left .content .swiper-slide {
-  width: 25vw;
-  margin-bottom: 1vw;
   font-size: 18px;
   background: #fff;
   display: flex;
@@ -307,7 +315,6 @@ header .logo_ko {
   width: 25vw;
   height: 26vw;
   border-radius: 1vw;
-  object-fit: cover;
   margin-bottom: 1vw;
 }
 .slide_btn {
@@ -316,8 +323,20 @@ header .logo_ko {
   position: absolute;
   top: 50%;
   left: 0;
-  width: 105%;
+  width: 100%;
   z-index: 99;
+}
+.swiper-button-next svg,
+.swiper-button-prev svg {
+  fill: transparent;
+  color: #000;
+}
+.swiper-button-prev svg {
+  transform: rotate(180deg);
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none;
 }
 .slide_txt {
   display: flex;
@@ -325,12 +344,23 @@ header .logo_ko {
   align-items: center;
   gap: 4px;
 }
+.slide_txt .tit {
+  font-size: 17px;
+  font-weight: 600;
+}
+.slide_txt .txt {
+  font-size: 15px;
+}
 .brand .right {
   width: 52%;
 }
 .brand .right .swiper img {
   width: 100%;
   height: 56vw;
+}
+.brand .left .read_more {
+  bottom: 6vw;
+  font-weight: 500;
 }
 .dimmed {
   position: fixed;
@@ -346,7 +376,7 @@ header .logo_ko {
   padding-inline-start: 9vw;
   padding-inline-end: 9vw;
   display: flex;
-  gap: 3vw;
+  gap: 2.6vw;
   background: #fdf8f5;
 }
 .now .tit_box {
@@ -372,13 +402,44 @@ header .logo_ko {
   flex-wrap: wrap;
   flex: 2;
 }
-.now .news_box div {
+.now .news_box > div {
   position: relative;
   width: 47%;
   min-height: 12.5vw;
   border-top: 3px solid #f7decb;
 }
-.now .news_box .cont1 .cont_txt .sub_tit {
+.now .news_box > div .line {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: #ff6400;
+  transition: width 0.5s;
+}
+.now .news_box > div a:hover .line {
+  width: 100%;
+}
+.now .news_box > div.cont1,
+.now .news_box > div.cont3 {
+  margin-right: 2.6vw;
+}
+.now .news_box > div .main_tit {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 1.5vw;
+  margin-bottom: 1vw;
+  color: #ff6400;
+}
+.now .news_box .cont_txt {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.now .news_box > div .cont_txt .txt_wrap {
+  width: 19vw;
+}
+.now .news_box > div:not(.cont4) .cont_txt .txt_wrap .sub_tit {
   width: 100%;
   font-size: 20px;
   font-weight: 700;
@@ -386,9 +447,277 @@ header .logo_ko {
   overflow: hidden;
   text-overflow: ellipsis;
   word-break: keep-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
 }
-.now .news_box .cont1 .cont1 svg {
+.now .news_box > div.cont4 .sub_tit {
+  width: 100%;
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 700;
+  word-break: keep-all;
+}
+.now .news_box > div .cont_txt .txt_wrap .txt {
+  font-size: 15px;
+  margin-top: 0.5vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  color: #999;
+}
+.now .news_box > div .cont_txt .go {
+  height: 26px;
+}
+.now .news_box > div .cont_txt .go .full {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4vw;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 26px;
+}
+.now .news_box .cont_txt svg {
+  width: 20px;
+  height: 20px;
   fill: transparent;
+}
+.now .news_box > div a:hover svg {
+  fill: #ff6400;
+}
+.now .news_box > div a:hover path {
+  stroke: #fff;
+}
+.images {
+  position: relative;
+  width: 100vw;
+  height: auto;
+  background: #fdf8f5;
+}
+.images .img_wrap {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+.images .img_wrap .box {
+  width: 25vw;
+  height: 25vw;
+  position: relative;
+  cursor: pointer;
+}
+.images .img_wrap .box .hover_box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  background: #ff6400;
+  z-index: 2;
+}
+.images .img_wrap a:hover .hover_box {
+  opacity: 1;
+}
+.images .img_wrap .box .hover_box .circle {
+  width: 90%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ff924c;
+  border-radius: 50%;
+}
+.images .img_wrap .box .hover_box .circle .text_box {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: center;
+  font-weight: 600;
+}
+.images .img_wrap .box .hover_box .circle .text_box .tit {
+  font-size: 26px;
+  color: #fff;
+}
+.images .img_wrap .box .hover_box .circle .text_box .txt {
+  font-size: 16px;
+}
+.images .img_wrap .box img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+footer {
+  width: 100%;
+  padding-top: 6vw;
+  padding-inline-start: 8vw;
+  padding-inline-end: 8vw;
+  display: flex;
+  flex-direction: column;
+
+  background: #323232;
+  color: #fff;
+  box-sizing: border-box;
+}
+footer .contents {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+footer .contents .left svg {
+  width: 390px;
+  height: 74px;
+}
+footer .contents .left .co_info {
+  display: flex;
+  flex-direction: column;
+}
+footer .contents .left .co_info .txt {
+  display: flex;
+  flex-direction: column;
+}
+footer .contents .left .co_info .txt > p {
+  line-height: 19px;
+  margin-top: 3vw;
+  margin-bottom: 1vw;
+  font-weight: 600;
+}
+footer .contents .left .co_info .txt .info_txt {
+  width: 26vw;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 12px;
+}
+footer .contents .left .co_info .txt .info_txt p {
+  line-height: 16px;
+  margin-right: 1vw;
+  margin-bottom: 0.6vw;
+  font-weight: 300;
+}
+footer .contents .left .co_info .fam_site {
+  position: relative;
+  cursor: pointer;
+  width: 250px;
+  height: 40px;
+  margin-top: 4vw;
+}
+footer .contents .left .co_info .fam_site .site_box {
+  width: 100%;
+  position: absolute;
+  bottom: 40px;
+  margin-bottom: 0.5vw;
+  display: none;
+}
+footer .contents .left .co_info .fam_site .site_box > div {
+  border-radius: 0.6vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+  padding: 10%;
+  font-size: 14px;
+  background: #fff;
+}
+footer .contents .left .co_info .fam_site .site_box > div .name {
+  display: flex;
+  align-items: center;
+  gap: 2%;
+}
+footer .contents .left .co_info .fam_site .site_box > div .name svg {
+  width: 14px;
+  height: 14px;
+  fill: transparent;
+}
+footer .contents .left .co_info .fam_site .site_box > div .name path {
+  stroke: #000;
+}
+footer .contents .left .co_info .fam_site button {
+  padding-top: 0.5vw;
+  padding-bottom: 0.5vw;
+  padding-inline-start: 0.5vw;
+  padding-inline-end: 0.5vw;
+  border-radius: 1.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+footer .contents .left .co_info .fam_site button p {
+  margin-left: 0.8vw;
+  font-size: 15px;
+  font-family: Poppins;
+  font-weight: 400;
+}
+footer .contents .left .co_info .fam_site button svg.arrow {
+  position: relative;
+  width: 23px;
+  height: 23px;
+  fill: transparent;
+}
+footer .contents .left .co_info .fam_site button svg.close {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 23px;
+  height: 23px;
+  fill: transparent;
+  display: none;
+}
+footer .contents .right {
+  width: 100%;
+}
+footer .contents .right .list_box {
+  display: flex;
+  justify-content: end;
+  flex-wrap: wrap;
+}
+footer .contents .right .list_box .list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 1vw;
+}
+footer .contents .right .list_box .list .txt {
+  border-top: 1px solid #999;
+}
+footer .contents .right .list_box .list .txt a {
+  display: block;
+  color: #fff;
+}
+footer .contents .right .list_box .list .txt .tit {
+  height: 23px;
+  font-size: 16px;
+  font-family: Poppins;
+  font-weight: 600;
+  line-height: 11px;
+  padding-top: 2vw;
+  padding-bottom: 0.5vw;
+}
+footer .contents .right .list_box .list .txt div {
+  font-weight: 500;
+  padding-bottom: 2vw;
+}
+footer .contents .right .list_box .list .txt div a {
+  font-size: 14px;
+  line-height: 18px;
+  margin-bottom: 0.5vw;
+}
+footer .copyright {
+  margin-top: 0.5vw;
+  padding-top: 1vw;
+  padding-bottom: 1.6vw;
+  font-size: 12px;
+  border-top: 1px solid #999;
 }
 .drop_box {
   display: none;
@@ -505,7 +834,6 @@ header.white svg {
 .menu_left .menu_wrap .sub_menu .business > div {
   display: flex;
   flex-flow: wrap;
-  /* width: 398px; */
 }
 .menu_left .menu_wrap .sub_menu .business > div > div {
   margin-bottom: 24px;
@@ -531,6 +859,9 @@ header.white svg {
 }
 .menu_left .menu_wrap .sub_menu .business div {
   height: 100%;
+}
+.menu_left .menu_wrap .sub_menu .careers span {
+  font-weight: 300;
 }
 .menu_left .menu_wrap .sub_menu a {
   color: #323232;
