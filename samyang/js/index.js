@@ -5,16 +5,18 @@ $(window).scroll(function (e) {
   let st = $(this).scrollTop();
   if (Math.abs(lastScrollTop - st) <= delta) return;
   if (st > lastScrollTop && lastScrollTop > 0) {
-    $("header").css("top", "-70px");
+    $(".wrap header").css("top", "-70px");
   } else {
-    $("header").css("top", "0px");
+    $(".wrap header").css("top", "0px");
   }
   lastScrollTop = st;
 });
+//
 
+// 메뉴 클릭시
 $(".drop_box,.dimmed").css("display", "none");
 $(".menu .lines").click(function () {
-  $(".drop_box,.dimmed").css("display", "block");
+  $(".drop_box,.dimmed").show();
   $(".img1").show().siblings().hide();
   $(".sub_menu > div").hide();
   $(window).scroll(function () {
@@ -22,7 +24,7 @@ $(".menu .lines").click(function () {
   });
 });
 $("header.white .close").click(function () {
-  $(".drop_box,.dimmed").css("display", "none");
+  $(".drop_box,.dimmed").hide();
 });
 //
 
@@ -89,3 +91,8 @@ var swiper = new Swiper(".mySwiper2", {
   },
 });
 //
+
+// footer family site button effect
+$(".fam_site button").click(function () {
+  $(".site_box").toggleClass("on");
+});

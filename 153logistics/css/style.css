@@ -808,6 +808,7 @@ header .inner nav .deps1 li .deps2 > li:hover a::before {
   z-index: -1;
 }
 .onestop .circle_box {
+  position: relative;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -817,6 +818,7 @@ header .inner nav .deps1 li .deps2 > li:hover a::before {
 .onestop .circle_box .line {
   flex: 1;
   position: relative;
+  /* width: 100%; */
   height: 1px;
   background: #fff;
 }
@@ -829,6 +831,11 @@ header .inner nav .deps1 li .deps2 > li:hover a::before {
   top: 0;
   position: absolute;
   transition: width 0.3s;
+  transform-origin: right 50%;
+}
+.onestop .circle_box .circle:hover .line:before {
+  width: 0;
+  height: 0;
 }
 .onestop .circle_box.on .line:first-child {
   width: 0;
@@ -836,8 +843,14 @@ header .inner nav .deps1 li .deps2 > li:hover a::before {
 .onestop .circle_box.on .line:last-child {
   width: 0;
 }
+.onestop .circle_box .circle {
+  width: 400px;
+  display: flex;
+}
 .onestop .circle_box .cir {
-  position: relative;
+  position: absolute;
+  left: 0;
+  top: 0;
   width: 400px;
   height: 400px;
   border: 1px solid #fff;
@@ -848,24 +861,27 @@ header .inner nav .deps1 li .deps2 > li:hover a::before {
   align-items: center;
   text-align: center;
   color: #fff;
+  overflow: hidden;
+  /* background: #1947ba; */
+}
+.onestop .circle_box .cir_inner {
+  position: relative;
+  width: 0;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transform-origin: left 50%;
+  transition: width 0.5s;
+}
+.onestop .circle_box .circle:hover .cir_inner {
+  width: 400px;
 }
 .onestop .circle_box .cir + .cir {
   margin-left: 1px;
 }
-/* .onestop .circle_box .cir:before {
-  content: "";
-  background-color: #1947ba;
-  width: calc(100% + 5px);
-  height: 105%;
-  right: -2px;
-  top: -2px;
-  display: block;
-  position: absolute;
-  z-index: 1;
-  transition: 0.5s;
-  transition-delay: 0.3s;
-} */
-.onestop .circle_box.on .cir:nth-child(2):before {
+/* .onestop .circle_box.on .cir:nth-child(2):before {
   width: 0;
 }
 .onestop .circle_box.on .cir:nth-child(3):before {
@@ -874,12 +890,12 @@ header .inner nav .deps1 li .deps2 > li:hover a::before {
 .onestop .circle_box .cir:nth-child(3):before {
   transform: translateX(-1px);
   transition-delay: 0.8s;
-}
+} */
 .onestop .circle_box .cir .text_box {
   position: relative;
   transition: 0.5s;
   transition-delay: 1.7s;
-  opacity: 0;
+  /* opacity: 0; */
 }
 .onestop .circle_box.on .cir .text_box {
   transform: translateY(0px);

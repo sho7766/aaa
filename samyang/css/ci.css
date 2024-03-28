@@ -7,6 +7,10 @@
   font-family: Poppins;
   src: url(../../webfonts/Poppins-Medium.woff) format("woff");
 }
+@font-face {
+  font-family: Poppins-regular;
+  src: url(../../webfonts/Poppins-Regular.woff) format("woff");
+}
 
 * {
   margin: 0;
@@ -157,7 +161,6 @@ header .logo_ko {
   padding-top: 6vw;
   padding-bottom: 6vw;
   display: flex;
-  flex-direction: row;
   gap: 9vw;
 }
 .scroll_page .motif .cont .left {
@@ -266,7 +269,6 @@ header .logo_ko {
 }
 .meaning .cont .logo_img .img_box .third {
   display: flex;
-  flex-direction: row;
   gap: 3vw;
   margin-top: 4vw;
   margin-left: 15vw;
@@ -339,7 +341,6 @@ header .logo_ko {
   font-weight: 700;
 }
 .logo_info .svg_wrap {
-  position: relative;
   width: 100%;
   height: 606px;
   font-size: 17px;
@@ -351,14 +352,12 @@ header .logo_ko {
   flex-direction: column;
 }
 .logo_info .svg_wrap .desc_top {
-  position: absolute;
-  top: 0;
+  margin-bottom: 1vw;
 }
 .logo_info .svg_wrap .desc {
   display: flex;
   gap: 160px;
-  position: absolute;
-  bottom: 0;
+  margin-top: 1vw;
 }
 .logo_info .svg_wrap p.highlight {
   position: relative;
@@ -379,9 +378,11 @@ header .logo_ko {
 .logo_info .svg_wrap svg {
   width: 560px;
   height: 397px;
-  position: absolute;
+  /* position: absolute; */
   top: 15%;
 }
+
+/* brand_info */
 .brand_info {
   position: relative;
   background: #fff;
@@ -405,33 +406,36 @@ header .logo_ko {
   margin-bottom: 3vw;
   border-bottom: 1px solid #c1c1c1;
 }
-.brand_info .info_wrap .color_cont {
+.brand_info .info_wrap .txt_box {
   display: flex;
-  flex-direction: column;
-  align-items: end;
-}
-.brand_info .info_wrap .color_cont .txt_box {
-  display: flex;
-  flex-direction: row;
   justify-content: space-between;
   width: 100%;
 }
-.brand_info .info_wrap .color_cont .txt_box .left p {
+.brand_info .info_wrap .txt_box .txt_left {
   font-size: 27px;
   font-weight: 400;
   font-family: Poppins;
 }
-.brand_info .info_wrap .color_cont .txt_box .right {
+.brand_info .info_wrap .txt_box .txt_left p:nth-child(2) {
+  font-size: 19px;
+  font-family: Pretendard;
+  font-weight: 700;
+}
+.brand_info .info_wrap .txt_box .txt_right {
   width: 54vw;
   font-size: 17px;
   margin-bottom: 3vw;
+}
+.brand_info .info_wrap .color_cont {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
 }
 .brand_info .info_wrap .color_cont .cont_box {
   width: fit-content;
 }
 .brand_info .info_wrap .color_cont .cont_box .cont {
   display: flex;
-  flex-direction: row;
   align-items: center;
   gap: 3.5vw;
   margin-bottom: 7vw;
@@ -471,7 +475,6 @@ header .logo_ko {
 }
 .brand_info .info_wrap .guide_tit .btn {
   display: flex;
-  flex-direction: row;
   gap: 0.5vw;
 }
 .brand_info .info_wrap .guide_tit .btn button {
@@ -482,11 +485,16 @@ header .logo_ko {
   align-items: center;
   justify-content: center;
   gap: 0.5vw;
+  font-family: Poppins;
   font-size: 15px;
   font-weight: 400;
   border: 1px solid #adadad;
   border-radius: 1.5vw;
   background: #fff;
+  cursor: pointer;
+}
+.brand_info .info_wrap .guide_tit .btn button.print p {
+  width: 73px;
 }
 .brand_info .info_wrap .guide_tit .btn button svg {
   width: 20px;
@@ -496,24 +504,12 @@ header .logo_ko {
 .brand_info .info_wrap .guide_cont {
   display: flex;
   flex-direction: column;
-  /* align-items: stretch; */
   gap: 5vw;
 }
 .brand_info .info_wrap .guide_cont .usage {
   display: flex;
   flex-direction: column;
   align-items: end;
-}
-.brand_info .info_wrap .guide_cont .usage .tit {
-  width: 100%;
-}
-.brand_info .info_wrap .guide_cont .usage .tit p:first-child {
-  font-size: 27px;
-  font-family: Poppins;
-}
-.brand_info .info_wrap .guide_cont .usage .tit p:last-child {
-  font-size: 19px;
-  font-weight: 700;
 }
 .brand_info .info_wrap .guide_cont .usage .images {
   width: fit-content;
@@ -533,17 +529,377 @@ header .logo_ko {
   flex-direction: column;
   align-items: flex-end;
 }
-.brand_info .info_wrap .guide_cont .size .txt_box {
+.brand_info .info_wrap .guide_cont .cont {
+  width: fit-content;
 }
-.brand_info .info_wrap .guide_cont .size .left {
+.brand_info .info_wrap .guide_cont .cont .cont_box {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
+  width: 54vw;
+  gap: 2vw;
+}
+.guide_cont .cont .cont_box .tit {
+  font-size: 16px;
+  font-family: Poppins;
+  font-weight: 600;
+  line-height: 24px;
+  margin-bottom: 0.5vw;
+}
+.size .cont .cont_box .img_box {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
+}
+.size .cont .cont_box .img_box .img_left,
+.size .cont .cont_box .img_box .img_right {
+  position: relative;
+}
+.size .cont .cont_box .img_box img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.size .cont .cont_box > div {
   width: 100%;
 }
-.brand_info .info_wrap .guide_cont .size .left p {
-  font-size: 27px;
+.size .cont .cont_box .symbol .img_box .img_left {
+  width: 15vw;
+  height: 13vw;
 }
+.size .cont .cont_box .img_box .img_right {
+  width: 19vw;
+  height: 6vw;
+}
+.size .cont .cont_box .logo .img_box .img_left {
+  width: 32.6vw;
+  height: 12.5vw;
+}
+.size .cont .cont_box .logo_kor .img_box .img_left {
+  width: 32vw;
+  height: 12.5vw;
+}
+.guide_cont .color {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.guide_cont .color .cont .cont_box .palette {
+  display: flex;
+  gap: 2vw;
+  font-family: Poppins;
+  width: fit-content;
+}
+.palette .core > div > p {
+  font-weight: 500;
+}
+.palette .secondary > div > p {
+  font-weight: 500;
+}
+.palette .code {
+  display: flex;
+  align-items: end;
+  gap: 1vw;
+  font-size: 12px;
+}
+.palette .code .code_wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+.palette .code .code_wrap div {
+  display: flex;
+  gap: 0.2vw;
+}
+.palette .core .orange {
+  width: 30.5vw;
+  height: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  background: #ff6400;
+  color: #fff;
+  padding-top: 0.9vw;
+  padding-bottom: 0.5vw;
+  padding-inline: 1vw;
+}
+.palette .core .cw {
+  display: flex;
+}
+.palette .core .cw .charcoal {
+  width: 16.5vw;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  background: #323232;
+  color: #fff;
+  padding-top: 1vw;
+  padding-bottom: 0.5vw;
+  padding-inline: 1vw;
+}
+.palette .core .cw .white {
+  width: 12.5vw;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  background: #fff;
+  color: #000;
+  padding-top: 1vw;
+  padding-bottom: 0.5vw;
+  padding-inline: 1vw;
+}
+.palette .secondary {
+  margin-top: 0;
+}
+.palette .secondary > div {
+  width: 17vw;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  padding-top: 1vw;
+  padding-bottom: 0.5vw;
+  padding-inline: 1vw;
+}
+.palette .secondary .burgundy {
+  background: #5f0a32;
+  color: #fff;
+}
+.palette .secondary .tangerine {
+  background: #ffa300;
+  color: #fff;
+}
+.palette .secondary .sand {
+  background: #f7decb;
+  color: #323232;
+}
+.guide_cont .color .cont .cont_box .pro_usage .images {
+  position: relative;
+  width: 53.5vw;
+  height: 34vw;
+}
+.pro_usage .images img {
+  width: 100%;
+}
+.brand_info .info_wrap .letter {
+  position: relative;
+  margin-top: 5vw;
+  margin-bottom: 5vw;
+}
+.brand_info .info_wrap .letter > div {
+  position: relative;
+  width: 81vw;
+  height: 17vw;
+  border-radius: 1.4vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  background: #fdf8f5;
+}
+.brand_info .info_wrap .letter > div svg {
+  width: 22vw;
+  height: 4vw;
+}
+.brand_info .info_wrap .letter > div a .go {
+  display: flex;
+  align-items: center;
+  margin-top: 2.6vw;
+}
+.brand_info .info_wrap .letter > div a .go .line {
+  width: 1vw;
+  height: 0.1vw;
+  margin-right: 0.6vw;
+  background: #ff6400;
+}
+.brand_info .info_wrap .letter > div a .go .txt {
+  display: flex;
+  align-items: center;
+}
+.brand_info .info_wrap .letter > div a .go .txt p:first-child {
+  font-family: Poppins;
+  margin-right: 0.3vw;
+  font-weight: 500;
+}
+.brand_info .info_wrap .letter > div a .go .txt p:last-child {
+  font-size: 15px;
+  font-weight: 600;
+}
+footer {
+  width: 100%;
+  padding-top: 3vw;
+  padding-inline-start: 8vw;
+  padding-inline-end: 8vw;
+  display: flex;
+  flex-direction: column;
+  background: #323232;
+  color: #fff;
+  box-sizing: border-box;
+}
+footer .contents {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+footer .contents .left svg {
+  width: 390px;
+  height: 74px;
+}
+footer .contents .left .co_info {
+  display: flex;
+  flex-direction: column;
+}
+footer .contents .left .co_info .txt {
+  display: flex;
+  flex-direction: column;
+}
+footer .contents .left .co_info .txt > p {
+  line-height: 19px;
+  margin-top: 3vw;
+  margin-bottom: 1vw;
+  font-weight: 600;
+}
+footer .contents .left .co_info .txt .info_txt {
+  width: 26vw;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 12px;
+}
+footer .contents .left .co_info .txt .info_txt p {
+  line-height: 16px;
+  margin-right: 1vw;
+  margin-bottom: 0.6vw;
+  font-weight: 300;
+}
+footer .contents .left .co_info .fam_site {
+  position: relative;
+  cursor: pointer;
+  width: 250px;
+  height: 40px;
+  margin-top: 4vw;
+}
+footer .contents .left .co_info .fam_site .site_box {
+  width: 100%;
+  position: absolute;
+  bottom: 40px;
+  margin-bottom: 0.5vw;
+  display: none;
+}
+footer .contents .left .co_info .fam_site .site_box.on {
+  display: block;
+}
+footer .contents .left .co_info .fam_site .site_box > div {
+  border-radius: 0.6vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3vw;
+  padding: 10%;
+  font-size: 14px;
+  background: #fff;
+}
+footer .contents .left .co_info .fam_site .site_box > div .name {
+  display: flex;
+  align-items: center;
+  gap: 2%;
+}
+footer .contents .left .co_info .fam_site .site_box > div .name svg {
+  width: 14px;
+  height: 14px;
+  fill: transparent;
+}
+footer .contents .left .co_info .fam_site .site_box > div .name path {
+  stroke: #000;
+}
+footer .contents .left .co_info .fam_site button {
+  padding-top: 0.5vw;
+  padding-bottom: 0.5vw;
+  padding-inline-start: 0.5vw;
+  padding-inline-end: 0.5vw;
+  border-radius: 1.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+footer .contents .left .co_info .fam_site button p {
+  margin-left: 0.8vw;
+  font-size: 15px;
+  font-family: Poppins-regular;
+}
+footer .contents .left .co_info .fam_site button svg.arrow {
+  position: relative;
+  width: 23px;
+  height: 23px;
+  fill: transparent;
+}
+footer .contents .left .co_info .fam_site button svg.close {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 23px;
+  height: 23px;
+  fill: transparent;
+  display: none;
+}
+footer .contents .right {
+  width: 100%;
+}
+footer .contents .right .list_box {
+  display: flex;
+  justify-content: end;
+  flex-wrap: wrap;
+}
+footer .contents .right .list_box .list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 1vw;
+}
+footer .contents .right .list_box .list .txt {
+  border-top: 1px solid #999;
+}
+footer .contents .right .list_box .list .txt a {
+  display: block;
+  color: #fff;
+}
+footer .contents .right .list_box .list .txt .tit {
+  height: 23px;
+  font-size: 16px;
+  font-family: Poppins;
+  line-height: 11px;
+  padding-top: 2vw;
+  padding-bottom: 0.5vw;
+}
+footer .contents .right .list_box .list .txt div {
+  font-weight: 500;
+  padding-bottom: 2vw;
+}
+footer .contents .right .list_box .list .txt div a {
+  font-size: 14px;
+  line-height: 18px;
+  margin-bottom: 0.5vw;
+}
+footer .copyright {
+  margin-top: 0.5vw;
+  padding-top: 1vw;
+  padding-bottom: 1.6vw;
+  font-size: 12px;
+  border-top: 1px solid #999;
+}
+
 .dimmed {
   position: fixed;
   top: 0;
@@ -562,7 +918,7 @@ header .logo_ko {
   background: #fff;
   z-index: 9999;
 }
-.drop_box header.white {
+.drop_box header {
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -573,16 +929,16 @@ header .logo_ko {
   border-bottom: 1px solid rgba(50, 50, 50, 0.5);
   box-sizing: border-box;
 }
-header.white a {
+.drop_box header a {
   cursor: pointer;
 }
-header.white a svg {
+.drop_box header a svg {
   width: 210px;
   height: 100%;
   flex-shrink: 0;
   vertical-align: middle;
 }
-header.white svg {
+.drop_box header svg {
   width: 20px;
   height: 20px;
   flex-shrink: 0;
@@ -708,7 +1064,6 @@ header.white svg {
 .drop_menu .boxes .menu_left .lang div {
   display: flex;
   align-items: center;
-  flex-direction: row;
   margin-top: 30px;
   padding-bottom: 40px;
   height: 30px;

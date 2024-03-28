@@ -608,11 +608,14 @@ footer .contents .left .co_info .fam_site .site_box {
   margin-bottom: 0.5vw;
   display: none;
 }
+footer .contents .left .co_info .fam_site .site_box.on {
+  display: block;
+}
 footer .contents .left .co_info .fam_site .site_box > div {
   border-radius: 0.6vw;
   display: flex;
   flex-direction: column;
-  gap: 1vw;
+  gap: 1.3vw;
   padding: 10%;
   font-size: 14px;
   background: #fff;
@@ -642,6 +645,7 @@ footer .contents .left .co_info .fam_site button {
   width: 100%;
   height: 100%;
   border: none;
+  cursor: pointer;
 }
 footer .contents .left .co_info .fam_site button p {
   margin-left: 0.8vw;
@@ -729,7 +733,7 @@ footer .copyright {
   background: #fff;
   z-index: 9999;
 }
-.drop_box header.white {
+.drop_box header {
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -740,16 +744,16 @@ footer .copyright {
   border-bottom: 1px solid rgba(50, 50, 50, 0.5);
   box-sizing: border-box;
 }
-header.white a {
+.drop_box header a {
   cursor: pointer;
 }
-header.white a svg {
+.drop_box header a svg {
   width: 210px;
   height: 100%;
   flex-shrink: 0;
   vertical-align: middle;
 }
-header.white svg {
+.drop_box header svg {
   width: 20px;
   height: 20px;
   flex-shrink: 0;
