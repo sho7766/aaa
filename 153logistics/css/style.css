@@ -784,7 +784,7 @@ header .inner nav .deps1 li .deps2 > li:hover a::before {
   color: #fff;
 }
 .onestop .tit_box .tit1 {
-  font-size: 54px;
+  font-size: 48px;
   font-weight: 700;
   line-height: 1.3;
 }
@@ -797,12 +797,11 @@ header .inner nav .deps1 li .deps2 > li:hover a::before {
   margin-top: 5px;
   z-index: 1;
 }
-.onestop .tit_box .tit2::before {
+.onestop .tit_box .tit2_bg {
   position: absolute;
   top: 0;
   left: -10px;
-  content: "";
-  width: calc(100% + 20px);
+  width: 0;
   height: 100%;
   background: #000;
   z-index: -1;
@@ -815,34 +814,26 @@ header .inner nav .deps1 li .deps2 > li:hover a::before {
   align-items: center;
   margin-top: 240px;
 }
+.onestop .circle_box:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 400px;
+  background: #1947ba;
+  transition: width 3s ease-out;
+}
+.onestop .circle_box.on:after {
+  width: 0;
+}
 .onestop .circle_box .line {
   flex: 1;
   position: relative;
-  /* width: 100%; */
   height: 1px;
   background: #fff;
 }
-.onestop .circle_box .line:before {
-  content: "";
-  background-color: #1947ba;
-  width: 100%;
-  height: 200%;
-  right: 0;
-  top: 0;
-  position: absolute;
-  transition: width 0.3s;
-  transform-origin: right 50%;
-}
-.onestop .circle_box .circle:hover .line:before {
-  width: 0;
-  height: 0;
-}
-.onestop .circle_box.on .line:first-child {
-  width: 0;
-}
-.onestop .circle_box.on .line:last-child {
-  width: 0;
-}
+
 .onestop .circle_box .circle {
   width: 400px;
   display: flex;
@@ -862,40 +853,21 @@ header .inner nav .deps1 li .deps2 > li:hover a::before {
   text-align: center;
   color: #fff;
   overflow: hidden;
-  /* background: #1947ba; */
 }
 .onestop .circle_box .cir_inner {
   position: relative;
-  width: 0;
+  width: 400px;
   height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  transform-origin: left 50%;
-  transition: width 0.5s;
 }
-.onestop .circle_box .circle:hover .cir_inner {
-  width: 400px;
-}
-.onestop .circle_box .cir + .cir {
-  margin-left: 1px;
-}
-/* .onestop .circle_box.on .cir:nth-child(2):before {
-  width: 0;
-}
-.onestop .circle_box.on .cir:nth-child(3):before {
-  width: 0;
-}
-.onestop .circle_box .cir:nth-child(3):before {
-  transform: translateX(-1px);
-  transition-delay: 0.8s;
-} */
 .onestop .circle_box .cir .text_box {
   position: relative;
   transition: 0.5s;
   transition-delay: 1.7s;
-  /* opacity: 0; */
+  transform: translateY(50px);
+  opacity: 0;
 }
 .onestop .circle_box.on .cir .text_box {
   transform: translateY(0px);
@@ -920,8 +892,14 @@ header .inner nav .deps1 li .deps2 > li:hover a::before {
 .onestop .icon_box .i_con {
   width: 25%;
   text-align: center;
-  animation: fadeInUp 0.2s;
+  opacity: 0;
+  transform: translateY(100px);
 }
+.onestop .icon_box .i_con.on {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
 .onestop .icon_box .i_con .i_img {
   position: relative;
   width: 100%;
@@ -961,6 +939,7 @@ header .inner nav .deps1 li .deps2 > li:hover a::before {
   display: inline-block;
   transform: translateY(-15%);
 }
+
 /* onestop 끝 */
 
 /* capa 시작 */
@@ -1292,16 +1271,7 @@ footer .inner .right_box .nav_footer a:hover:before {
 }
 
 /* animation */
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(100px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+
 @keyframes fadeInLeft {
   0% {
     opacity: 0;

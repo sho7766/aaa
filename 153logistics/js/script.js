@@ -114,18 +114,54 @@ $(window).scroll(function () {
   }
 });
 
-let number = document.querySelectorAll(".number .text span");
-let interval = 5000;
+// let number = document.querySelectorAll(".number .text span");
+// let interval = 5000;
 
-number.forEach((number) => {
-  let startNumber = 0;
-  let endNumber = parseInt(number.getAttribute("data-val"));
-  let duration = Math.floor(interval / endNumber);
-  let counter = setInterval(function () {
-    startNumber += 1;
-    number.textContent = startNumber;
-    if (startNumber == endNumber) {
-      clearInterval(counter);
-    }
-  });
+// number.forEach((number) => {
+//   let startNumber = 0;
+//   let endNumber = parseInt(number.getAttribute("data-val"));
+//   let duration = Math.floor(interval / endNumber);
+//   let counter = setInterval(function () {
+//     startNumber += 1;
+//     number.textContent = startNumber;
+//     if (startNumber == endNumber) {
+//       clearInterval(counter);
+//     }
+//   });
+// });
+
+let onestop = gsap.timeline();
+onestop
+  .from(
+    ".onestop .tit1",
+    {
+      x: -100,
+      autoAlpha: 0,
+      duration: 1.2,
+    },
+    "same"
+  )
+  .from(
+    ".onestop .tit2",
+    { x: -100, autoAlpha: 0, duration: 1.2, delay: 0.3 },
+    "same"
+  )
+  .to(
+    ".onestop .tit2 .tit2_bg",
+    { width: 730, duration: 0.9, delay: 0.4 },
+    "same"
+  );
+ScrollTrigger.create({
+  animation: onestop,
+  trigger: ".onestop",
+  start: "top 70%",
+  end: "top 50%",
+});
+ScrollTrigger.create({
+  trigger: ".onestop .circle_box",
+  start: "top 80%",
+  end: "top 50%",
+  onEnter: () => {
+    $(".circle_box").addClass("on");
+  },
 });
