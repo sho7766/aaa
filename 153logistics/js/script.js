@@ -165,3 +165,11 @@ ScrollTrigger.create({
     $(".circle_box").addClass("on");
   },
 });
+
+ScrollTrigger.create({
+  trigger: ".onestop .icon_box",
+  start: "top 90%",
+  onEnter: () => {
+    $(".i_con").addClass("on");
+  },
+});

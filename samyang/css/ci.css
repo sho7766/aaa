@@ -232,6 +232,7 @@ header .logo_ko {
   width: 31vw;
   height: 9.5vw;
 }
+
 .meaning .cont .logo_img .img_box .logo .logo_txt .txt1 {
   position: relative;
   width: 21vw;
@@ -252,7 +253,6 @@ header .logo_ko {
 .meaning .cont .logo_img .img_box .first {
   margin-top: 3vw;
   margin-left: 15vw;
-  display: none;
 }
 .meaning .cont .logo_img .img_box .second {
   display: flex;
@@ -261,8 +261,7 @@ header .logo_ko {
   margin-left: 15vw;
   margin-top: 4vw;
   font-size: 16px;
-  transition: all 0.8s ease-out 0s;
-  display: none;
+  transition: all 0.8s ease-in-out 0s;
 }
 .meaning .cont .logo_img .img_box .second p:first-child {
   font-weight: 600;
@@ -274,8 +273,7 @@ header .logo_ko {
   margin-left: 15vw;
   font-size: 15px;
   font-weight: 700;
-  transition: all 0.8s ease-out 0s;
-  display: none;
+  transition: all 0.8s ease-in-out 0s;
 }
 .meaning .cont .logo_img .img_box .third p {
   line-height: 24px;
@@ -297,8 +295,10 @@ header .logo_ko {
   gap: 1vw;
   margin-top: 4vw;
   margin-left: 15vw;
-  transition: all 0.8s ease-out 0s;
-  /* display: none; */
+  transition: all 0.8s ease-in-out 0s;
+}
+.meaning .cont .logo_img .img_box .fourth p:first-child {
+  font-weight: 600;
 }
 .meaning .cont .pro_line {
   display: block;
@@ -313,7 +313,7 @@ header .logo_ko {
   height: 20%;
   background: #ffa300;
   z-index: 1;
-  transition: all 0.8s ease-in-out 0s;
+  transition: all 0.8s ease-in-out;
 }
 .meaning .cont .pro_line hr {
   width: 100%;
@@ -784,7 +784,6 @@ footer .contents .left .co_info .txt .info_txt p {
 }
 footer .contents .left .co_info .fam_site {
   position: relative;
-  cursor: pointer;
   width: 250px;
   height: 40px;
   margin-top: 4vw;
@@ -833,6 +832,7 @@ footer .contents .left .co_info .fam_site button {
   width: 100%;
   height: 100%;
   border: none;
+  cursor: pointer;
 }
 footer .contents .left .co_info .fam_site button p {
   margin-left: 0.8vw;

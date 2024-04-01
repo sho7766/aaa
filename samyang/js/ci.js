@@ -57,16 +57,49 @@ $(".lang div p").eq(0).css("color", "#000");
 $(".lang div p").click(function () {
   $(this).css("color", "#000").siblings().css("color", "#848484");
 });
-// let idx = $(this).index();
-// $(".drop_menu .main_menu li")
-//   .eq(idx)
-//   .mouseenter(function () {});
-
+// 이거 왜안되는데..?
+$(".wrap .wrap").scroll(function () {
+  $(".motif video").play();
+});
 //CI Meaning effect
-$(".scroll_page .meaning").scroll(function () {
-  let ht = $(".meaning").offsetHeigth();
-  if (ht < "200vh") {
-    $("");
+
+$(window).scroll(function () {
+  if ($(document).scrollTop() > 4200) {
+    $(".first").hide();
+    $(".second").show();
+    $(".third").hide();
+    $(".logo_txt .txt1 svg").css({ opacity: "0.3", transition: "0.8s" });
+    $(".logo_txt svg:nth-child(2)").css({ opacity: "1", transition: "0s" });
+    $(".pro").css("height", "60%");
+  } else if ($(document).scrollTop() < 3600) {
+    $(".first, .second, .third, .fourth").hide();
+    $(".logo_txt svg:nth-child(2)").css({ opacity: "1", transition: "0s" });
+    $(".pro").css("height", "20%");
+  } else {
+    $(".first").show();
+    $(".second").hide();
+    $(".third").hide();
+    $(".logo_txt .txt1 svg").css({ opacity: "1", transition: "0s" });
+    $(".logo_txt svg:nth-child(2)").css({ opacity: "0.3", transition: "0.8s" });
+    $(".pro").css("height", "40%");
+  }
+});
+$(window).scroll(function () {
+  if ($(document).scrollTop() > 4800) {
+    $(".second").hide();
+    $(".third").show();
+    $(".logo_txt .txt1 svg").css({ opacity: "1", transition: "0s" });
+    $(".logo_txt svg:nth-child(2)").css("opacity", "1");
+    $(".pro").css("height", "80%");
+  }
+});
+$(window).scroll(function () {
+  if ($(document).scrollTop() > 5400) {
+    $(".third").hide();
+    $(".fourth").show();
+    $(".pro").css("height", "100%");
+  } else {
+    $(".fourth").hide();
   }
 });
 
