@@ -310,6 +310,9 @@ header .inner nav .deps1 li .deps2 > li:hover a::before {
   stroke-dasharray: 125.6;
   transform: rotate(-90deg);
 }
+.slide_move .autoplay-progress svg.no {
+  display: none;
+}
 .slide_move .autoplay-progress .btn {
   position: relative;
   top: 50%;
