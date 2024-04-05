@@ -16,6 +16,9 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/waypoints.min.js"></script>
   </head>
   <body>
     <div class="wrap">
@@ -119,12 +122,14 @@
               </svg>
             </div>
             <div class="timer">
-              <div class="btn">
+              <div class="slide_btn">
                 <div class="pause">
                   <span></span>
                   <span></span>
                 </div>
-                <div class="play"><img src="images/play_btn.svg" alt="" /></div>
+                <div class="play">
+                  <img src="images/play_btn.svg" alt="" />
+                </div>
               </div>
               <div class="autoplay-progress">
                 <path
@@ -311,7 +316,7 @@
                 <img src="images/data_icon1.gif" alt="" class="gif" />
                 <img src="images/data_icon1.png" alt="" class="png" />
               </div>
-              <p class="text"><span id="one"></span>개</p>
+              <p class="text"><span class="counterup_obj1">10</span>개</p>
               <p class="tit">센터 수</p>
             </div>
             <div class="cont">
@@ -319,7 +324,7 @@
                 <img src="images/data_icon2.gif" alt="" class="gif" />
                 <img src="images/data_icon2.png" alt="" class="png" />
               </div>
-              <p class="text"><span>100</span>%</p>
+              <p class="text"><span class="counterup_obj1">100</span>%</p>
               <p class="tit">당일출고율</p>
             </div>
             <div class="cont">
@@ -327,7 +332,7 @@
                 <img src="images/data_icon3.gif" alt="" class="gif" />
                 <img src="images/data_icon3.png" alt="" class="png" />
               </div>
-              <p class="text"><span>6,561</span>만</p>
+              <p class="text"><span class="counterup_obj2">6,561</span>만</p>
               <p class="tit">누적출고량</p>
             </div>
             <div class="cont">
@@ -335,7 +340,7 @@
                 <img src="images/data_icon4.gif" alt="" class="gif" />
                 <img src="images/data_icon4.png" alt="" class="png" />
               </div>
-              <p class="text"><span>61,757</span>명</p>
+              <p class="text"><span class="counterup_obj">61,757</span>명</p>
               <p class="tit">누적투입인력</p>
             </div>
             <div class="cont">
@@ -343,7 +348,7 @@
                 <img src="images/data_icon5.gif" alt="" class="gif" />
                 <img src="images/data_icon5.png" alt="" class="png" />
               </div>
-              <p class="text"><span>108,926</span>㎡</p>
+              <p class="text"><span class="counterup_obj">108,926</span>㎡</p>
               <p class="tit">센터크기</p>
             </div>
           </div>

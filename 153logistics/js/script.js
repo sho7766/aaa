@@ -68,7 +68,7 @@ var swiper = new Swiper(".mySwiper", {
 //
 
 // main .slide_move play & pause button toggle
-$(".btn").click(function () {
+$(".slide_btn").click(function () {
   swiper.autoplay.stop();
   $(this).toggleClass("on");
   $(progressCircle).css({
@@ -226,18 +226,28 @@ ScrollTrigger.create({
 });
 
 // data 섹션 숫자 카운트 애니메이션
-let count = 0;
-let countBox = document.querySelector("#one");
-let num1 = 10;
-let counting = setInterval(function () {
-  if (count >= num1) {
-    count = num1;
-    clearInterval(counting);
-  } else {
-    count += 10;
+$(".cont").each(function (index) {
+  if (!$(".cont").eq(index).hasClass("on")) {
+    var row = $(this);
+    setTimeout(function () {
+      row.addClass("on");
+    }, 3000 * index);
   }
-  countBox.innerHTML = new Intl.NumberFormat().format(count);
-}, 10);
+}),
+  // $(".cont").eq(0).addClass("on");
+  // setTimeout(function () {
+  //   $(".cont").eq(1).addClass("on");
+  // }, 200);
+  // $(".cont").addClass("on");
+  $(".counterup_obj").counterUp({
+    time: 700,
+  });
+$(".counterup_obj1").counterUp({
+  time: 500,
+});
+$(".counterup_obj2").counterUp({
+  time: 1000,
+});
 
 // special title 스크롤 애니메이션
 let special = gsap.timeline();
