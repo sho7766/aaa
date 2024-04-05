@@ -50,7 +50,7 @@ var swiper = new Swiper(".mySwiper", {
     delay: 10000,
     disableOnInteraction: false,
   },
-  rewind: true,
+  loop: true,
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
@@ -68,14 +68,189 @@ var swiper = new Swiper(".mySwiper", {
 //
 
 // main .slide_move play & pause button toggle
-$(".autoplay-progress .btn").on("click", function () {
+$(".btn").click(function () {
+  swiper.autoplay.stop();
   $(this).toggleClass("on");
+  $(progressCircle).css({
+    "stroke-dashoffset": "292.273",
+    "stroke-dasharray": "292.273, 292.273",
+  });
 });
-$(".autoplay-progress .btn").click(function () {
-  $(".swiper").stop();
-  $(".autoplay-progress svg").toggleClass("no");
+// service 섹션 스크롤 에니메이션
+let service = gsap.timeline();
+service.from(".service .inner .tit_box .tit", {
+  x: -100,
+  autoAlpha: 0,
+  duration: 1,
+});
+ScrollTrigger.create({
+  animation: service,
+  trigger: ".service",
+  start: "top 70%",
+});
+let scroll = gsap.timeline();
+scroll.to(".img_wrap", { x: -2300 });
+ScrollTrigger.create({
+  animation: scroll,
+  trigger: ".img_wrap",
+  scrub: true,
+  start: "+=0",
+  end: "+=8200",
+});
+ScrollTrigger.create({
+  trigger: ".img1",
+  scrub: true,
+  start: "+=0",
+  end: "+=2000",
+  toggleClass: "on",
+});
+ScrollTrigger.create({
+  trigger: ".img2",
+  scrub: true,
+  start: "+=1100",
+  end: "+=1130",
+  toggleClass: "on",
+});
+ScrollTrigger.create({
+  trigger: ".img3",
+  scrub: true,
+  start: "+=2300",
+  end: "+=2300",
+  toggleClass: "on",
+});
+ScrollTrigger.create({
+  trigger: ".img4",
+  scrub: true,
+  start: "+=4500",
+  end: "+=4500",
+  toggleClass: "on",
+});
+$(window).scroll(function () {
+  if ($(document).scrollTop() > 1420) {
+    $(".fixed_cont").addClass("on");
+  } else {
+    $(".fixed_cont").removeClass("on");
+  }
+});
+$(window).scroll(function () {
+  if ($(document).scrollTop() > 2500) {
+    $(".img1").css("opacity", "0");
+  } else {
+    $(".img1").css("opacity", "1");
+  }
+});
+$(window).scroll(function () {
+  if ($(document).scrollTop() > 3000) {
+    $(".fade_box1").css("opacity", "0");
+    $(".fade_box2").addClass("on");
+  } else {
+    $(".fade_box1").css("opacity", "1");
+    $(".fade_box2").removeClass("on");
+  }
+});
+$(window).scroll(function () {
+  if ($(document).scrollTop() > 4200) {
+    $(".img2").css("opacity", "0");
+  } else {
+    $(".img2").css("opacity", "1");
+  }
+});
+$(window).scroll(function () {
+  if ($(document).scrollTop() > 4300) {
+    $(".fade_box2").removeClass("on");
+    $(".fade_box3").addClass("on");
+  } else {
+    $(".fade_box3").removeClass("on");
+  }
+});
+$(window).scroll(function () {
+  if ($(document).scrollTop() > 6400) {
+    $(".fade_box3").removeClass("on");
+    $(".fade_box4").addClass("on");
+  } else {
+    $(".fade_box4").removeClass("on");
+  }
+});
+$(window).scroll(function () {
+  if ($(document).scrollTop() > 6500) {
+    $(".img3").css("opacity", "0");
+  } else {
+    $(".img3").css("opacity", "1");
+  }
+});
+$(window).scroll(function () {
+  if ($(document).scrollTop() > 8200) {
+    $(".fixed_cont").addClass("end");
+  } else {
+    $(".fixed_cont").removeClass("end");
+  }
+});
+//
+
+// data title 스크롤 애니메이션
+let dataTit = gsap.timeline();
+dataTit
+  .from(
+    ".data .inner .tit_box .tit",
+    {
+      x: 200,
+      autoAlpha: 0,
+      duration: 1,
+    },
+    "data"
+  )
+  .from(
+    ".data .inner .tit_box .txt",
+    {
+      x: 200,
+      autoAlpha: 0,
+      duration: 1,
+      delay: 0.5,
+    },
+    "data"
+  )
+  .from(
+    ".data .inner .tit_box .txt2",
+    {
+      x: 200,
+      autoAlpha: 0,
+      duration: 1,
+      delay: 0.8,
+    },
+    "data"
+  );
+ScrollTrigger.create({
+  animation: dataTit,
+  trigger: ".data",
+  start: "top 60%",
 });
 
+// data 섹션 숫자 카운트 애니메이션
+let count = 0;
+let countBox = document.querySelector("#one");
+let num1 = 10;
+let counting = setInterval(function () {
+  if (count >= num1) {
+    count = num1;
+    clearInterval(counting);
+  } else {
+    count += 10;
+  }
+  countBox.innerHTML = new Intl.NumberFormat().format(count);
+}, 10);
+
+// special title 스크롤 애니메이션
+let special = gsap.timeline();
+special.from(".special .inner .tit_box .tit", {
+  x: -200,
+  autoAlpha: 0,
+  duration: 1,
+});
+ScrollTrigger.create({
+  animation: special,
+  trigger: ".special",
+  start: "top 90%",
+});
 // .special section 마우스이벤트
 const sec = document.querySelector(".special");
 gsap.set(".pointer", { xPercent: -50, yPercent: -50 });
@@ -94,22 +269,6 @@ window.addEventListener("mousemove", (e) => {
   xSetter(e.x);
   ySetter(e.y);
 });
-
-// let number = document.querySelectorAll(".number .text span");
-// let interval = 5000;
-
-// number.forEach((number) => {
-//   let startNumber = 0;
-//   let endNumber = parseInt(number.getAttribute("data-val"));
-//   let duration = Math.floor(interval / endNumber);
-//   let counter = setInterval(function () {
-//     startNumber += 1;
-//     number.textContent = startNumber;
-//     if (startNumber == endNumber) {
-//       clearInterval(counter);
-//     }
-//   });
-// });
 
 //onestop 스크롤 이벤트
 let onestop = gsap.timeline();
@@ -147,7 +306,6 @@ ScrollTrigger.create({
     $(".circle_box").addClass("on");
   },
 });
-
 ScrollTrigger.create({
   trigger: ".onestop .icon_box",
   start: "top 90%",
@@ -156,6 +314,264 @@ ScrollTrigger.create({
   },
 });
 
+//capa섹션 스크롤 애니메이션
+let capaTit = gsap.timeline();
+capaTit.from(".capa .tit_box .tit", {
+  x: -200,
+  autoAlpha: 0,
+  duration: 1,
+});
+ScrollTrigger.create({
+  animation: capaTit,
+  trigger: ".capa",
+  start: "top 80%",
+});
+let capaImg1 = gsap.timeline();
+capaImg1
+  .from(
+    ".capa .cont1 .img_box",
+    {
+      y: 50,
+      autoAlpha: 0,
+      duration: 1,
+    },
+    "one"
+  )
+  .from(
+    ".capa .cont1 .text_box",
+    {
+      x: -100,
+      autoAlpha: 0,
+      duration: 1,
+    },
+    "one"
+  );
+ScrollTrigger.create({
+  animation: capaImg1,
+  trigger: ".cont1",
+  start: "top 90%",
+  end: "top 50%",
+});
+let capaImg2 = gsap.timeline();
+capaImg2
+  .from(
+    ".capa .cont2 .img_box",
+    {
+      y: 50,
+      autoAlpha: 0,
+      duration: 1,
+    },
+    "two"
+  )
+  .from(
+    ".capa .cont2 .text_box",
+    {
+      x: 100,
+      autoAlpha: 0,
+      duration: 1,
+    },
+    "two"
+  );
+ScrollTrigger.create({
+  animation: capaImg2,
+  trigger: ".cont2",
+  start: "top 90%",
+  end: "top 50%",
+});
+let capaImg3 = gsap.timeline();
+capaImg3
+  .from(
+    ".capa .cont3 .img_box",
+    {
+      y: 50,
+      autoAlpha: 0,
+      duration: 1,
+    },
+    "three"
+  )
+  .from(
+    ".capa .cont3 .text_box",
+    {
+      x: -100,
+      autoAlpha: 0,
+      duration: 1,
+    },
+    "three"
+  );
+ScrollTrigger.create({
+  animation: capaImg3,
+  trigger: ".cont3",
+  start: "top 90%",
+  end: "top 50%",
+});
+let capaImg4 = gsap.timeline();
+capaImg4
+  .from(
+    ".capa .cont4 .img_box",
+    {
+      y: 50,
+      autoAlpha: 0,
+      duration: 1,
+    },
+    "four"
+  )
+  .from(
+    ".capa .cont4 .text_box",
+    {
+      x: 100,
+      autoAlpha: 0,
+      duration: 1,
+    },
+    "four"
+  );
+ScrollTrigger.create({
+  animation: capaImg4,
+  trigger: ".cont4",
+  start: "top 90%",
+  end: "top 50%",
+});
+let capaImg5 = gsap.timeline();
+capaImg5
+  .from(
+    ".capa .cont5 .img_box",
+    {
+      y: 50,
+      autoAlpha: 0,
+      duration: 1,
+    },
+    "five"
+  )
+  .from(
+    ".capa .cont5 .text_box",
+    {
+      x: -100,
+      autoAlpha: 0,
+      duration: 1,
+    },
+    "five"
+  );
+ScrollTrigger.create({
+  animation: capaImg5,
+  trigger: ".cont5",
+  start: "top 90%",
+  end: "top 50%",
+});
+let capaImg6 = gsap.timeline();
+capaImg6
+  .from(
+    ".capa .cont6 .img_box",
+    {
+      y: 50,
+      autoAlpha: 0,
+      duration: 1,
+    },
+    "six"
+  )
+  .from(
+    ".capa .cont6 .text_box",
+    {
+      x: 100,
+      autoAlpha: 0,
+      duration: 1,
+    },
+    "six"
+  );
+ScrollTrigger.create({
+  animation: capaImg6,
+  trigger: ".cont6",
+  start: "top 90%",
+  end: "top 50%",
+});
+let capaImg7 = gsap.timeline();
+capaImg7
+  .from(
+    ".capa .cont7 .img_box",
+    {
+      y: 50,
+      autoAlpha: 0,
+      duration: 1,
+    },
+    "seven"
+  )
+  .from(
+    ".capa .cont7 .text_box",
+    {
+      x: -100,
+      autoAlpha: 0,
+      duration: 1,
+    },
+    "seven"
+  );
+ScrollTrigger.create({
+  animation: capaImg7,
+  trigger: ".cont7",
+  start: "top 90%",
+  end: "top 50%",
+});
+let capaImg8 = gsap.timeline();
+capaImg8
+  .from(
+    ".capa .cont8 .img_box",
+    {
+      y: 50,
+      autoAlpha: 0,
+      duration: 1,
+    },
+    "eight"
+  )
+  .from(
+    ".capa .cont8 .text_box",
+    {
+      x: 100,
+      autoAlpha: 0,
+      duration: 1,
+    },
+    "eight"
+  );
+ScrollTrigger.create({
+  animation: capaImg8,
+  trigger: ".cont8",
+  start: "top 90%",
+  end: "top 50%",
+});
+let capaImg9 = gsap.timeline();
+capaImg9
+  .from(
+    ".capa .cont9 .img_box",
+    {
+      y: 50,
+      autoAlpha: 0,
+      duration: 1,
+    },
+    "nine"
+  )
+  .from(
+    ".capa .cont9 .text_box",
+    {
+      x: -100,
+      autoAlpha: 0,
+      duration: 1,
+    },
+    "nine"
+  );
+ScrollTrigger.create({
+  animation: capaImg9,
+  trigger: ".cont9",
+  start: "top 90%",
+  end: "top 50%",
+});
+// partner title 스크롤 애니메이션
+let partnerTit = gsap.timeline();
+partnerTit.from(".partner .tit_box .tit", {
+  x: -100,
+  autoAlpha: 0,
+  duration: 1,
+});
+ScrollTrigger.create({
+  animation: partnerTit,
+  trigger: ".partner",
+  start: "top 90%",
+});
 //상단이동버튼
 $(".goTop_btn").click(function () {
   $("html,body").animate({ scrollTop: 0 }, 300);
@@ -166,77 +582,5 @@ $(window).scroll(function () {
     $(".goTop_btn").addClass("on");
   } else {
     $(".goTop_btn").removeClass("on");
-  }
-});
-
-let service = gsap.timeline();
-service.from(".service .inner .tit_box .tit", {
-  x: -100,
-  autoAlpha: 0,
-  duration: 1,
-});
-ScrollTrigger.create({
-  animation: service,
-  trigger: ".service",
-  start: "top 70%",
-});
-let moveImg1 = gsap.timeline();
-moveImg1.to(".img1", { x: -700 });
-ScrollTrigger.create({
-  animation: moveImg1,
-  trigger: ".img1",
-  start: "+=1400",
-  end: "+=3100",
-  toggleClass: "on",
-  scrub: true,
-});
-
-$(window).scroll(function () {
-  if ($(document).scrollTop() > 1400) {
-    $(".fixed_cont").addClass("on");
-  } else {
-    $(".fixed_cont").removeClass("on");
-  }
-});
-
-$(window).scroll(function () {
-  if ($(document).scrollTop() > 3100) {
-    $(".img1").css("opacity", "0");
-  } else {
-    $(".img1").css("opacity", "1");
-  }
-});
-
-$(window).scroll(function () {
-  if ($(document).scrollTop() > 3800) {
-    $(".fade_box1").css("opacity", "0");
-    $(".fade_box2").addClass("on");
-  } else {
-    $(".fade_box1").css("opacity", "1");
-    $(".fade_box2").removeClass("on");
-  }
-});
-
-$(window).scroll(function () {
-  if ($(document).scrollTop() > 5000) {
-    $(".fade_box2").removeClass("on");
-    $(".fade_box3").addClass("on");
-  } else {
-    $(".fade_box3").removeClass("on");
-  }
-});
-$(window).scroll(function () {
-  if ($(document).scrollTop() > 6200) {
-    $(".fade_box3").removeClass("on");
-    $(".fade_box4").addClass("on");
-  } else {
-    $(".fade_box4").removeClass("on");
-  }
-});
-$(window).scroll(function () {
-  if ($(document).scrollTop() > 8000) {
-    $(".fixed_cont").addClass("end");
-  } else {
-    $(".fixed_cont").removeClass("end");
   }
 });

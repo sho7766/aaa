@@ -76,6 +76,9 @@
         <div class="swiper mySwiper main_swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide main_one">
+              <div class="bg">
+                <img src="images/main_01.jpg" alt="" />
+              </div>
               <div class="txt_box">
                 <div class="inner">
                   <p class="tit">
@@ -86,6 +89,9 @@
               </div>
             </div>
             <div class="swiper-slide main_two">
+              <div class="bg">
+                <img src="images/main_02.jpg" alt="" />
+              </div>
               <div class="txt_box">
                 <div class="inner">
                   <p class="tit">
@@ -112,7 +118,7 @@
                 <circle cx="24" cy="24" r="20"></circle>
               </svg>
             </div>
-            <div class="autoplay-progress">
+            <div class="timer">
               <div class="btn">
                 <div class="pause">
                   <span></span>
@@ -120,21 +126,29 @@
                 </div>
                 <div class="play"><img src="images/play_btn.svg" alt="" /></div>
               </div>
-              <path
-                d="M 50,50 m 0,-46.5 a 46.5,46.5 0 1 1 0,93 a 46.5,46.5 0 1 1 0,-93"
-                stroke="rgba(255,255,255,0.3)"
-                stroke-width="7"
-                fill-opacity="0"
-              ></path>
-              <svg viewBox="0 0 48 48">
-                <circle cx="24" cy="24" r="20"></circle>
-              </svg>
+              <div class="autoplay-progress">
+                <path
+                  d="M 50,50 m 0,-46.5 a 46.5,46.5 0 1 1 0,93 a 46.5,46.5 0 1 1 0,-93"
+                  stroke="rgba(255,255,255,0.3)"
+                  stroke-width="7"
+                  fill-opacity="0"
+                ></path>
+                <svg viewBox="0 0 48 48">
+                  <circle cx="24" cy="24" r="20"></circle>
+                </svg>
+              </div>
             </div>
             <div class="page_btn">
               <div class="swiper-button-prev"></div>
               <div class="swiper-pagination"></div>
               <div class="swiper-button-next"></div>
             </div>
+          </div>
+        </div>
+        <div class="scroll_down">
+          <p>Scroll</p>
+          <div class="mouse">
+            <span></span>
           </div>
         </div>
       </div>
@@ -297,7 +311,7 @@
                 <img src="images/data_icon1.gif" alt="" class="gif" />
                 <img src="images/data_icon1.png" alt="" class="png" />
               </div>
-              <p class="text"><span data-val="10">10</span>개</p>
+              <p class="text"><span id="one"></span>개</p>
               <p class="tit">센터 수</p>
             </div>
             <div class="cont">
@@ -305,7 +319,7 @@
                 <img src="images/data_icon2.gif" alt="" class="gif" />
                 <img src="images/data_icon2.png" alt="" class="png" />
               </div>
-              <p class="text"><span data-val="100">100</span>%</p>
+              <p class="text"><span>100</span>%</p>
               <p class="tit">당일출고율</p>
             </div>
             <div class="cont">
@@ -313,7 +327,7 @@
                 <img src="images/data_icon3.gif" alt="" class="gif" />
                 <img src="images/data_icon3.png" alt="" class="png" />
               </div>
-              <p class="text"><span data-val="6,561">6,561</span>만</p>
+              <p class="text"><span>6,561</span>만</p>
               <p class="tit">누적출고량</p>
             </div>
             <div class="cont">
@@ -321,7 +335,7 @@
                 <img src="images/data_icon4.gif" alt="" class="gif" />
                 <img src="images/data_icon4.png" alt="" class="png" />
               </div>
-              <p class="text"><span data-val="61,757">61,757</span>명</p>
+              <p class="text"><span>61,757</span>명</p>
               <p class="tit">누적투입인력</p>
             </div>
             <div class="cont">
@@ -329,7 +343,7 @@
                 <img src="images/data_icon5.gif" alt="" class="gif" />
                 <img src="images/data_icon5.png" alt="" class="png" />
               </div>
-              <p class="text"><span data-val="108,926">108,926</span>㎡</p>
+              <p class="text"><span>108,926</span>㎡</p>
               <p class="tit">센터크기</p>
             </div>
           </div>
