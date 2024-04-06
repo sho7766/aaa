@@ -669,7 +669,7 @@ header .inner nav .deps1 li .deps2 > li:hover a::before {
   transition: all 0.3s;
   text-align: center;
   margin-bottom: 0;
-  opacity: 1;
+  /* opacity: 1; */
 }
 .data .number .cont .icon img {
   width: 60%;
@@ -682,15 +682,19 @@ header .inner nav .deps1 li .deps2 > li:hover a::before {
   width: 100%;
 }
 .data .number .cont .icon .gif {
-  /* opacity: 0; */
+  opacity: 0;
   bottom: -10px;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s ease-in-out;
 }
 .data .number .cont.on .icon .gif {
   opacity: 1;
 }
 .data .number .cont.on .icon .png {
   opacity: 0;
+}
+.data .number .cont.on .text,
+.data .number .cont.on .tit {
+  color: #000;
 }
 .data .number .cont .text {
   display: flex;
@@ -708,6 +712,7 @@ header .inner nav .deps1 li .deps2 > li:hover a::before {
   font-family: Monsterrat;
   vertical-align: bottom;
   transition: all 0.7s transform 0s;
+  transform: translateY(5px);
 }
 .data .number .cont.on .text span {
   font-size: 80px;

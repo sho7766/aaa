@@ -226,28 +226,35 @@ ScrollTrigger.create({
 });
 
 // data 섹션 숫자 카운트 애니메이션
-$(".cont").each(function (index) {
-  if (!$(".cont").eq(index).hasClass("on")) {
-    var row = $(this);
+var elements = $(".cont");
+var index = 0;
+
+function applyClass() {
+  if (index < 5) {
+    var currentElement = $(elements[index]);
+    currentElement.addClass("on");
     setTimeout(function () {
-      row.addClass("on");
-    }, 3000 * index);
+      currentElement.removeClass("on");
+      index++;
+      applyClass();
+    }, 3000);
+  } else {
+    index = 0;
+    applyClass();
   }
-}),
-  // $(".cont").eq(0).addClass("on");
-  // setTimeout(function () {
-  //   $(".cont").eq(1).addClass("on");
-  // }, 200);
-  // $(".cont").addClass("on");
-  $(".counterup_obj").counterUp({
-    time: 700,
-  });
+}
+applyClass();
+
+$(".counterup_obj").counterUp({
+  time: 700,
+});
 $(".counterup_obj1").counterUp({
   time: 500,
 });
 $(".counterup_obj2").counterUp({
   time: 1000,
 });
+//
 
 // special title 스크롤 애니메이션
 let special = gsap.timeline();
