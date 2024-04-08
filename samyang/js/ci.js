@@ -11,7 +11,9 @@ $(window).scroll(function (e) {
   }
   lastScrollTop = st;
 });
+//
 
+// 메뉴 클릭시
 $(".drop_box,.dimmed").css("display", "none");
 $(".menu .lines").click(function () {
   $(".drop_box,.dimmed").show();
@@ -24,7 +26,9 @@ $(".menu .lines").click(function () {
 $("header.white .close").click(function () {
   $(".drop_box,.dimmed").hide();
 });
+//
 
+// drop_box 에 drop_menu 메인 메뉴 호버시 서브메뉴와 이미지 체인지
 $(".g").mouseenter(function () {
   $(".group").show().siblings().hide();
   $(".img1").show().siblings().hide();
@@ -57,12 +61,9 @@ $(".lang div p").eq(0).css("color", "#000");
 $(".lang div p").click(function () {
   $(this).css("color", "#000").siblings().css("color", "#848484");
 });
-// 이거 왜안되는데..?
-$(".wrap .wrap").scroll(function () {
-  $(".motif video").play();
-});
-//CI Meaning effect
+//
 
+//CI Meaning effect
 $(window).scroll(function () {
   if ($(document).scrollTop() > 4200) {
     $(".first").hide();

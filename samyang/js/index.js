@@ -68,7 +68,6 @@ $(".lang div p").click(function () {
 var swiper = new Swiper(".mySwiper1", {
   direction: "horizontal",
   loop: true,
-  // cssMode: 0.5,
   autoplay: {
     delay: 2500,
     disableOnInteraction: false,
