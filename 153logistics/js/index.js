@@ -29,11 +29,14 @@ $(menu).mouseleave(function () {
   }
 });
 $(window).scroll(function () {
+  $("header").addClass("on");
+  $(menuA).addClass("on");
+  $(".logo a").addClass("on");
+  $(".share_btn").addClass("on");
   if ($(document).scrollTop() > 0) {
-    menuIn();
-    $(sub).removeClass("on");
-    $(".deps1_bg").removeClass("on");
-    $(".share_btn").addClass("on");
+    $(menu).mouseenter(function () {
+      menuIn();
+    });
   } else {
     menuOut();
     $(".share_btn").removeClass("on");
