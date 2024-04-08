@@ -577,6 +577,8 @@ ScrollTrigger.create({
   start: "top 90%",
   end: "top 50%",
 });
+//
+
 // partner title 스크롤 애니메이션
 let partnerTit = gsap.timeline();
 partnerTit.from(".partner .tit_box .tit", {
@@ -589,6 +591,8 @@ ScrollTrigger.create({
   trigger: ".partner",
   start: "top 90%",
 });
+//
+
 //상단이동버튼
 $(".goTop_btn").click(function () {
   $("html,body").animate({ scrollTop: 0 }, 300);
@@ -601,3 +605,4 @@ $(window).scroll(function () {
     $(".goTop_btn").removeClass("on");
   }
 });
+//
