@@ -629,6 +629,7 @@ header .inner nav .deps1 li .deps2 > li:hover a::before {
 .data {
   max-width: 100%;
   padding: 360px 0 360px;
+  background: #fff;
 }
 .data .tit_box {
   text-align: right;
