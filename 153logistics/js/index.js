@@ -71,14 +71,26 @@ var swiper = new Swiper(".mySwiper", {
 //
 
 // main .slide_move play & pause button toggle
-$(".slide_btn").click(function () {
+$(".pause").click(function () {
   swiper.autoplay.stop();
-  $(this).toggleClass("on");
+  $(this).css("display", "none");
+  $(".play").css("display", "block");
   $(progressCircle).css({
     "stroke-dashoffset": "292.273",
     "stroke-dasharray": "292.273, 292.273",
   });
 });
+$(".play").click(function () {
+  swiper.autoplay.start();
+  $(this).css("display", "none");
+  $(".pause").css("display", "flex");
+  $(progressCircle).css({
+    "stroke-dashoffset": "calc(125.6 * (1 - var(--progress)))",
+    "stroke-dasharray": "125.6",
+  });
+});
+//
+
 // service 섹션 스크롤 에니메이션
 let service = gsap.timeline();
 service.from(".service .inner .tit_box .tit", {
@@ -227,35 +239,39 @@ ScrollTrigger.create({
   trigger: ".data",
   start: "top 60%",
 });
+// data 섹션 숫자 카운트 스크롤 애니메이션
+ScrollTrigger.create({
+  trigger: ".data .number",
+  start: "top 70%",
+  onEnter: () => {
+    var elements = $(".cont");
+    var index = 0;
 
-// data 섹션 숫자 카운트 애니메이션
-var elements = $(".cont");
-var index = 0;
-
-function applyClass() {
-  if (index < 5) {
-    var currentElement = $(elements[index]);
-    currentElement.addClass("on");
-    setTimeout(function () {
-      currentElement.removeClass("on");
-      index++;
-      applyClass();
-    }, 3000);
-  } else {
-    index = 0;
+    function applyClass() {
+      if (index < 5) {
+        var currentElement = $(elements[index]);
+        currentElement.addClass("on");
+        setTimeout(function () {
+          currentElement.removeClass("on");
+          index++;
+          applyClass();
+        }, 3000);
+      } else {
+        index = 0;
+        applyClass();
+      }
+    }
     applyClass();
-  }
-}
-applyClass();
-
-$(".counterup_obj").counterUp({
-  time: 700,
-});
-$(".counterup_obj1").counterUp({
-  time: 500,
-});
-$(".counterup_obj2").counterUp({
-  time: 1000,
+    $(".counterup_obj").counterUp({
+      time: 700,
+    });
+    $(".counterup_obj1").counterUp({
+      time: 500,
+    });
+    $(".counterup_obj2").counterUp({
+      time: 1000,
+    });
+  },
 });
 //
 

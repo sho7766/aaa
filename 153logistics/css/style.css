@@ -328,28 +328,22 @@ header .inner nav .deps1 li .deps2 > li:hover a::before {
   cursor: pointer;
   z-index: 99;
 }
-.slide_move .slide_btn .pause {
+.slide_move .slide_btn.pause {
   display: flex;
   justify-content: space-between;
   position: absolute;
-  top: 50%;
+  top: 85%;
   left: 50%;
   width: 10px;
   transform: translate(-50%, -50%);
 }
-.slide_move .slide_btn.on .pause {
-  opacity: 0;
-}
-.slide_move .slide_btn .play {
+.slide_move .slide_btn.play {
   position: absolute;
-  top: 50%;
+  top: 70%;
   left: 50%;
   width: 10px;
   transform: translate(-50%, -50%);
-  opacity: 0;
-}
-.slide_move .slide_btn.on .play {
-  opacity: 1;
+  display: none;
 }
 .slide_move .pause span {
   display: block;
