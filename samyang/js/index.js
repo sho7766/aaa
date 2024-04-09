@@ -19,12 +19,11 @@ $(".menu .lines").click(function () {
   $(".drop_box,.dimmed").show();
   $(".img1").show().siblings().hide();
   $(".sub_menu > div").hide();
-  $(window).scroll(function () {
-    $("html,body").css("display", "fixed");
-  });
+  $("html, body").css({ overflow: "hidden", height: "100%" });
 });
-$("header.white .close").click(function () {
-  $(".drop_box,.dimmed").hide();
+$("header .close").click(function () {
+  $(".drop_box, .dimmed").hide();
+  $("html, body").css({ overflow: "visible", height: "100%" });
 });
 //
 
