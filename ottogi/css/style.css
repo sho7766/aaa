@@ -64,6 +64,26 @@ header {
 header.on {
   background: #fff;
 }
+header:before {
+  content: "";
+  position: absolute;
+  top: 100px;
+  height: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  transition: height 0.2s linear;
+}
+header.on:before {
+  position: absolute;
+  top: 100px;
+  height: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  transition: height 0.2s linear;
+  height: 388px;
+}
 header:after {
   content: "";
   position: absolute;
@@ -78,26 +98,9 @@ header:after {
   );
   z-index: -1;
 }
-/* header:before {
-  content: "";
-  position: absolute;
-  top: 100px;
-  height: 0;
-  left: 0;
-  width: 100%;
-  background: #fff;
-  transition: height 0.2s linear;
-} */
-/* header.on:before {
-  position: absolute;
-  top: 100px;
-  height: 0;
-  left: 0;
-  width: 100%;
-  background: #fff;
-  transition: height 0.2s linear;
-  height: 388px;
-} */
+header.off:after {
+  opacity: 0;
+}
 header .inner {
   margin: 0 75px;
   position: relative;
@@ -157,8 +160,12 @@ header .inner .gnb > li:last-child a {
   height: 100%;
   background: url(../images/btn_menu_w.svg) center no-repeat;
 }
+header .inner .gnb > li:last-child a.on {
+  background: url(images/btn_menu_w_hover) center no-repeat;
+}
 header .inner .gnb > li:last-child:hover a {
-  background: url(../images/btn_menu_w_hover.svg) center no-repeat;
+  background: url(../images/btn_menu_w.svg) no-repeat 50% 50% / 30px 30px;
+  transition: all 0.5s cubic-bezier(0.6, 0, 0, 1);
 }
 header .inner .lang {
   position: absolute;
