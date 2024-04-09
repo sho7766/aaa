@@ -140,6 +140,7 @@ ScrollTrigger.create({
   end: "+=4500",
   toggleClass: "on",
 });
+
 $(window).scroll(function () {
   if ($(document).scrollTop() > 1420) {
     $(".fixed_cont").addClass("on");
@@ -243,10 +244,11 @@ ScrollTrigger.create({
 ScrollTrigger.create({
   trigger: ".data .number",
   start: "top 70%",
+  once: true,
+  markers: true,
   onEnter: () => {
     var elements = $(".cont");
     var index = 0;
-
     function applyClass() {
       if (index < 5) {
         var currentElement = $(elements[index]);

@@ -42,3 +42,19 @@ $(gnb).mouseleave(function () {
 // 홈페이지 첫 접속시 완두콩형태의 클립이미지 에니메이션 효과주기
 
 // 스크롤할때 페이드효과 주기
+
+var swiper = new Swiper(".mySwiper", {
+  pagination: {
+    el: ".swiper-pagination",
+    type: "progressbar",
+  },
+  autoplay: {
+    delay: 12000,
+    disableOnInteraction: false,
+  },
+  loop: true,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});

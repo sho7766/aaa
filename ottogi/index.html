@@ -12,6 +12,10 @@
       type="module"
     ></script>
     <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <link rel="icon" href="images/favicon.ico" />
   </head>
   <body>
@@ -26,7 +30,7 @@
               <li>
                 <a href="#">회사소개</a>
                 <ul class="sub">
-                  <li><a href="Overview">Overview</a></li>
+                  <li><a href="#">Overview</a></li>
                   <li><a href="#">오뚜기 소개</a></li>
                   <li><a href="#">글로벌 오뚜기</a></li>
                   <li><a href="#">오시는길</a></li>
@@ -104,14 +108,40 @@
       </header>
       <div class="main">
         <div class="main_visual">
-          <video
-            autoplay
-            muted
-            loop
-            auto
-            src="images/main_video01.mp4"
-            type="video/mp4"
-          ></video>
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide v1">
+                <video
+                  autoplay
+                  muted
+                  loop
+                  auto
+                  src="images/main_video01.mp4"
+                  type="video/mp4"
+                ></video>
+              </div>
+              <div class="swiper-slide">
+                <video
+                  autoplay
+                  muted
+                  loop
+                  auto
+                  src="images/main_video02.mp4"
+                  type="video/mp4"
+                ></video>
+              </div>
+              <!-- <div class="swiper-slide">Slide 3</div>
+              <div class="swiper-slide">Slide 4</div>
+              <div class="swiper-slide">Slide 5</div>
+              <div class="swiper-slide">Slide 6</div>
+              <div class="swiper-slide">Slide 7</div>
+              <div class="swiper-slide">Slide 8</div>
+              <div class="swiper-slide">Slide 9</div> -->
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          </div>
         </div>
         <button type="button" class="btn_plus"></button>
       </div>
@@ -244,6 +274,6 @@
         </div>
       </section>
     </div>
-    <script src="js/script.js"></script>
+    <script src="js/index.js"></script>
   </body>
 </html>
