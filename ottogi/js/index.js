@@ -5,28 +5,22 @@ let sub = document.querySelectorAll(".sub");
 
 $(gnb).mouseenter(function () {
   $(".gnb>li>a").addClass("on");
-  $(".lang a").css({ color: "#333", textShadow: "none" }).addClass("on");
+  $(".lang > a").css({ color: "#333", textShadow: "none" }).addClass("on");
   $(header).addClass("on");
   $(sub).css("height", "358px");
-  $(".gnb > li:last-child a").css(
-    "background",
-    "url(images/btn_menu_hover.svg)center no-repeat"
-  );
   $(header).addClass("off");
 });
 $(header).mouseleave(function () {
   $(".gnb>li>a").removeClass("on");
-  $(".lang a").css("color", "#fff");
-  $(".lang a").removeClass("on");
+  $(".lang > a").css("color", "#fff");
+  $(".lang > a").removeClass("on");
   $(sub).css("height", "0");
   $(header).removeClass("on");
-  $(".gnb > li:last-child a").css(
-    "background",
-    "url(images/btn_menu_w.svg)center no-repeat"
-  );
   $(header).removeClass("off");
 });
-
+$(".lang").click(function () {
+  $(".dropLang").toggleClass("on");
+});
 // 헤더 어디든 호버해도 서브메뉴가 사라지지 않도록 하기
 
 // 홈페이지 첫 접속시 완두콩형태의 클립이미지 에니메이션 효과주기
