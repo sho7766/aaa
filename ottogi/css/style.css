@@ -309,18 +309,21 @@ header .inner nav .gnb .sub li:hover a {
   text-underline-offset: 4px;
   text-decoration-thickness: 1px;
 }
-.main .main_visual {
+.main .inner {
+  height: 100%;
+}
+.main .inner .main_visual {
   height: calc(var(--vh, 1vh) * 100);
-  position: relative;
   overflow: hidden;
 }
-.main .main_visual .inner {
+.main .inner .main_visual .swiper-container {
   height: 100%;
 }
-.main .main_visual .swiper-wrapper {
+.main .inner .main_visual .swiper-slide a {
+  display: block;
   height: 100%;
 }
-.main .main_visual .swiper-wrapper .swiper-slide:before {
+.main .inner .main_visual .swiper-slide:before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -334,12 +337,12 @@ header .inner nav .gnb .sub li:hover a {
     rgba(0, 0, 0, 0.5) 100%
   );
 }
-.main .main_visual video {
-  position: relative;
+.main .inner .main_visual .swiper-slide video {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
-.main .main_visual .mask {
+.main .inner .main_visual .swiper-slide .mask {
   width: 100%;
   height: 105%;
   object-fit: cover;
@@ -348,16 +351,21 @@ header .inner nav .gnb .sub li:hover a {
   mask-repeat: no-repeat;
   mask-position: center bottom;
   transition: mask-size 1s;
+  transition-delay: 0.8s;
 }
-.main .main_visual .mask.on {
-  width: 500% 400%;
+.main .inner .main_visual .swiper-slide .mask.on {
+  mask-size: 500% 400%;
 }
-.main .main_visual .swiper-slide .slide_img img {
+.main .inner .main_visual .swiper-slide .slide_img {
+  display: block;
+  height: 100%;
+}
+.main .inner .main_visual .swiper-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.main .main_visual .swiper-slide .slide_cont {
+.main .inner .main_visual .swiper-slide .slide_cont {
   position: absolute;
   top: 0;
   left: 0;
@@ -366,7 +374,7 @@ header .inner nav .gnb .sub li:hover a {
   min-width: 1480px;
   margin: 0 auto;
 }
-.main .main_visual .swiper-slide .slide_cont .slide_tit {
+.main .inner .main_visual .swiper-slide .slide_cont .slide_tit {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -380,6 +388,92 @@ header .inner nav .gnb .sub li:hover a {
   text-shadow: 0 8px 24px rgba(0, 0, 0, 0.8);
   text-align: center;
 }
+.main .inner .main_visual .controller {
+  position: absolute;
+  bottom: 70px;
+  left: 70px;
+  right: 70px;
+  max-width: 441px;
+  height: 50px;
+  margin: 0 auto;
+  z-index: 9999;
+}
+.main .main_visual .controller .swiper-pagination-fraction {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 241px;
+  height: 24px;
+  margin-top: -12px;
+  font-size: 16px;
+  color: #fff;
+  line-height: 24px;
+  text-align: left;
+  letter-spacing: -0.8px;
+}
+.main .main_visual .controller .swiper-pagination-current {
+  font-weight: 700;
+}
+.main .main_visual .controller .swiper-pagination-total {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.main .main_visual .controller .swiper-pagination2 {
+  top: 50%;
+  left: 29px;
+  width: 180px;
+  margin-top: -2px;
+  background: rgba(255, 255, 255, 0.3);
+}
+.controller .swiper-pagination2 .swiper-pagination-progressbar-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  /* transform: scaleX(0.16) scaleY(1); */
+  transform-origin: left top;
+}
+.controller .btn_wrap button {
+  position: absolute;
+  top: 50%;
+  right: 120px;
+  width: 50px;
+  height: 50px;
+  margin-top: -25px;
+  border-radius: 50%;
+  border: none;
+}
+.controller .btn_wrap .pause {
+  background: url(../images/btn_pause_main.svg) no-repeat 50% 50% / 100% 100%;
+}
+.controller .btn_wrap .play {
+  background: url(../images/btn_play_main.svg) no-repeat 50% 50% / 100% 100%;
+  display: none;
+}
+.controller button {
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  margin-top: -25px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+.controller .next {
+  right: 0;
+  background: url(../images/btn_next_main.svg) no-repeat 50% 50% / 100% 100%;
+}
+.controller .prev {
+  left: auto;
+  right: 60px;
+  background: url(../images/btn_prev_main.svg) no-repeat 50% 50% / 100% 100%;
+}
 .main .btn_plus {
   width: 54px;
   height: 80px;
@@ -392,6 +486,28 @@ header .inner nav .gnb .sub li:hover a {
   cursor: pointer;
   z-index: 1;
 }
+.btn_more {
+  margin-top: 40px;
+  width: 100%;
+  height: 30px;
+}
+.btn_more a {
+  display: block;
+  width: 100px;
+  height: 30px;
+  background: url(../images/btn_more_pc.svg) no-repeat 50% 50% / 100% 100%;
+}
+.btn_more:hover a {
+  animation: move 0.5s ease-in-out infinite alternate;
+}
+@keyframes move {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(5px);
+  }
+}
 .info {
   position: relative;
   width: 100%;
@@ -400,7 +516,7 @@ header .inner nav .gnb .sub li:hover a {
   font-weight: 500;
   padding-top: 60px;
 }
-.scroll_down {
+.info .scroll_down {
   position: relative;
   display: block;
   width: 93px;
@@ -408,7 +524,7 @@ header .inner nav .gnb .sub li:hover a {
   margin: 0 auto;
   background: url(../images/ico_scroll.svg) center no-repeat;
 }
-.scroll_down::after {
+.info .scroll_down::after {
   content: url(../images/ico_scroll_arw.svg);
   position: absolute;
   bottom: 15px;
@@ -427,18 +543,19 @@ header .inner nav .gnb .sub li:hover a {
     transform: translateY(0);
   }
 }
-h3 {
+.info h3 {
   text-align: center;
   margin-top: 100px;
   font-size: 48px;
+  font-weight: 500;
   line-height: 64px;
   letter-spacing: -1.4px;
 }
-.one {
+.info .one {
   display: flex;
   padding-top: 180px;
 }
-.svg1 {
+.info .svg1 {
   position: absolute;
   top: 220px;
   left: 160px;
@@ -446,7 +563,7 @@ h3 {
   transform: scale(2);
   z-index: 9;
 }
-.svg2 {
+.info .svg2 {
   position: absolute;
   top: 200px;
   right: 150px;
@@ -454,59 +571,47 @@ h3 {
   transform: scale(1.5);
   z-index: 9;
 }
-.txt {
+.info .txt {
   width: 554px;
   height: 500px;
   padding: 97px 113px 0 0;
 }
-.txt h1 {
+.info .txt h1 {
   font-size: 48px;
-  letter-spacing: -4px;
+  line-height: 64px;
+  letter-spacing: -1.4px;
+  font-weight: 500;
 }
-.font_yellow {
+.info .font_yellow {
   -webkit-text-stroke: 1px #000;
   color: #ffed00;
   font-size: 50px;
 }
-.txt p {
+.info .txt p {
   font-size: 18px;
   margin-top: 30px;
+  line-height: 30px;
+  word-break: keep-all;
+  font-weight: 300;
 }
-.txt a img {
-  margin-top: 30px;
-  width: 100px;
-  height: 30px;
-}
-@keyframes move {
-  0% {
-    transform: translateX(0px);
-  }
-  100% {
-    transform: translateX(5px);
-  }
-}
-.txt a:hover img {
-  animation: move 0.5s ease-in-out infinite alternate;
-}
-
-.item {
+.info .item {
   position: relative;
   display: flex;
   width: 780px;
   height: 500px;
   margin-left: 128px;
 }
-.item .img_box {
+.info .item .img_box {
   width: 450px;
   height: 500px;
 }
-.item .img_box .thumb {
+.info .item .img_box .thumb {
   position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
-.item .img_box .thumb img {
+.info .item .img_box .thumb img {
   position: absolute;
   top: 0;
   left: 0;
@@ -515,23 +620,23 @@ h3 {
   height: 100%;
   object-fit: cover;
 }
-.item1 .thumb {
+.info .item1 .thumb {
   border-radius: 200px;
 }
-.item .clipped {
+.info .item .clipped {
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
 }
-.item .svg {
+.info .item .svg {
   position: absolute;
 }
-.clipped.path1 {
+.info .clipped.path1 {
   clip-path: url(#my-clip-path);
 }
-.clipped.path2 {
+.info .clipped.path2 {
   clip-path: url(#my-clip-path2);
 }
 @keyframes fadeIn {
@@ -557,21 +662,21 @@ h3 {
   opacity: 0;
   animation: fadeIn 3.5s ease-in-out 1.5s infinite alternate;
 }
-.two {
+.info .two {
   position: relative;
   display: flex;
 }
-.two .txt {
+.info .two .txt {
   width: 690px;
   height: 500px;
   margin-left: 90px;
   padding-top: 154px;
 }
-.three {
+.info .three {
   display: flex;
   height: 477px;
 }
-.three .txt {
+.info .three .txt {
   padding: 194px 113px;
 }
 .global {
@@ -601,22 +706,22 @@ h3 {
   height: 246px;
 }
 .global .inner .txt h2 {
+  font-weight: 500;
   font-size: 48px;
+  letter-spacing: -1.4px;
 }
 .global .inner .txt h1 {
   font-size: 80px;
+  font-weight: 500;
   color: #dc2f34;
   margin-top: 10px;
+  letter-spacing: -1.4px;
 }
 .global .inner .txt p {
   margin-top: 34px;
   font-size: 26px;
+  font-weight: 300;
   line-height: 38px;
-  letter-spacing: -1.2px;
-}
-.global .inner .btn_more {
-  margin-top: 40px;
-  width: 100%;
 }
 .contet_global {
   position: relative;

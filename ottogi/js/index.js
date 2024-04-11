@@ -1,3 +1,10 @@
+// 메인페이지 로드시 마스크효과 해제
+window.onload = function () {
+  $(".mask").addClass("on");
+};
+//
+
+// 메뉴 이벤트
 let header = document.querySelector("header");
 let inner = document.querySelector(".inner");
 let gnb = document.querySelectorAll(".gnb>li:not(:last-child)");
@@ -21,15 +28,17 @@ $(header).mouseleave(function () {
 $(".lang").click(function () {
   $(".dropLang").toggleClass("on");
 });
-// 헤더 어디든 호버해도 서브메뉴가 사라지지 않도록 하기
-
-// 홈페이지 첫 접속시 완두콩형태의 클립이미지 에니메이션 효과주기
+//
 
 // 스크롤할때 페이드효과 주기
 
-var swiper = new Swiper(".mySwiper", {
+var swiper = new Swiper(".swiper-container", {
+  pagination1: {
+    el: ".swiper-pagination-fraction",
+    type: "fraction",
+  },
   pagination: {
-    el: ".swiper-pagination",
+    el: ".swiper-pagination-progressbar ",
     type: "progressbar",
   },
   autoplay: {
@@ -38,7 +47,7 @@ var swiper = new Swiper(".mySwiper", {
   },
   loop: true,
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    nextEl: ".next",
+    prevEl: ".prev",
   },
 });

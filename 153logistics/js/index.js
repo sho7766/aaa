@@ -61,6 +61,17 @@ var swiper = new Swiper(".mySwiper", {
   pagination: {
     el: ".swiper-pagination",
     type: "fraction",
+    renderFraction: function (currentClass, totalClass) {
+      return (
+        '<span class="' +
+        currentClass +
+        '"></span>' +
+        '<span class="custom-separator"> / </span>' +
+        '<span class="' +
+        totalClass +
+        '"></span>'
+      );
+    },
   },
   on: {
     autoplayTimeLeft(s, time, progress) {

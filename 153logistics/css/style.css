@@ -380,6 +380,9 @@ header .inner nav .deps1 li .deps2 > li:hover a::before {
 .page_btn .swiper-pagination .swiper-pagination-total {
   margin-left: 10px;
 }
+.page_btn .swiper-pagination .custom-separator {
+  opacity: 0.5;
+}
 .page_btn .swiper-button-prev::after,
 .page_btn .swiper-button-next::after {
   opacity: 0.5;

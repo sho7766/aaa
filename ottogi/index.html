@@ -117,12 +117,14 @@
       <div class="main">
         <div class="inner">
           <div class="main_visual">
-            <div class="swiper mySwiper">
+            <div
+              class="swiper-container swiper-initialized swiper-horizontal swiper-pointer-events"
+            >
               <div class="swiper-wrapper">
-                <div class="swiper-slide v1">
+                <div class="swiper-slide">
                   <a href="#" target="_blank">
                     <video
-                      mask
+                      class="mask"
                       autoplay
                       muted
                       loop
@@ -135,6 +137,7 @@
                 </div>
                 <div class="swiper-slide">
                   <video
+                    class="mask"
                     autoplay
                     muted
                     loop
@@ -180,16 +183,31 @@
                   </div>
                 </div>
                 <div class="swiper-slide">
-                  <div class="slide_img">
-                    <img src="images/slide06.jpg" alt="" />
-                  </div>
+                  <a href="#">
+                    <div class="slide_img">
+                      <img src="images/slide06.jpg" alt="" />
+                    </div>
+                  </a>
                 </div>
               </div>
-              <div class="swiper-button-next"></div>
-              <div class="swiper-button-prev"></div>
-              <div class="swiper-pagination">
-                <span class="swiper-pagination-current">01</span>
-                <span class="swiper-pagination-total">06</span>
+              <div class="controller">
+                <div
+                  class="swiper-pagination1 swiper-pagination-fraction swiper-pagination-horizontal"
+                >
+                  <span class="current">01</span>
+                  <span class="swiper-pagination-total">06</span>
+                </div>
+                <div
+                  class="swiper-pagination2 swiper-pagination-progressbar swiper-pagination-horizontal"
+                >
+                  <span class="swiper-pagination-progressbar-fill"></span>
+                </div>
+                <div class="btn_wrap">
+                  <button type="button" class="pause"></button>
+                  <button type="button" class="play"></button>
+                </div>
+                <button type="button" class="next"></button>
+                <button type="button" class="prev"></button>
               </div>
             </div>
           </div>
@@ -229,7 +247,7 @@
               자동화된 생산라인과 첨단설비, 위생적인 환경을 구축하여 오뚜기의
               1등 제품을 우수한 품질로 제공합니다.
             </p>
-            <a href="#"><img src="images/btn_more.svg" alt="" /></a>
+            <div class="btn_more"><a href="#"></a></div>
           </div>
         </div>
         <div class="two">
@@ -242,7 +260,7 @@
               식품이 사람들의 심신 건강을 지키는 영양분이 될 수 있도록 과거부터
               현재까지 이어온 그리고 앞으로도 계속 이어갈 오뚜기의 마음입니다.
             </p>
-            <a href="#"><img src="images/btn_more.svg" alt="" /></a>
+            <div class="btn_more"><a href="#"></a></div>
           </div>
           <div class="item item2">
             <div class="img_box">
@@ -300,7 +318,7 @@
               식품을우리 인류에게 선보입니다.
             </p>
             <ul></ul>
-            <a href="#"><img src="images/btn_more.svg" alt="" /></a>
+            <div class="btn_more"><a href="#"></a></div>
           </div>
         </div>
       </section>
@@ -315,7 +333,7 @@
             </p>
           </div>
           <div class="btn_more">
-            <a href="#"><img src="images/btn_more.svg" alt="" /></a>
+            <a href="#"></a>
           </div>
           <div class="contet_global">
             <ul>
