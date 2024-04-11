@@ -51,3 +51,26 @@ var swiper = new Swiper(".swiper-container", {
     prevEl: ".prev",
   },
 });
+
+// function randomSize() {
+//   return Math.random() * 200 + 100; // Adjust the range of random size as needed
+// }
+// gsap.to(".global_cont img", {
+//   duration: 1, // Duration of the animation
+//   scaleX: randomSize(), // Random scaleX value
+//   scaleY: randomSize(), // Random scaleY value
+//   ease: "power2.out", // Easing function
+//   onComplete: function () {
+//     // After the animation completes, repeat the animation
+//     gsap.to(".global_cont img", {
+//       duration: 1,
+//       scaleX: randomSize(),
+//       scaleY: randomSize(),
+//       ease: "power2.out",
+//       onComplete: function () {
+//         // Repeat the animation indefinitely
+//         gsap.delayedCall(0, randomSize);
+//       },
+//     });
+//   },
+// });
