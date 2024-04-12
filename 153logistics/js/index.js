@@ -256,7 +256,6 @@ ScrollTrigger.create({
   trigger: ".data .number",
   start: "top 70%",
   once: true,
-  markers: true,
   onEnter: () => {
     var elements = $(".cont");
     var index = 0;

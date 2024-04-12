@@ -51,7 +51,16 @@ var swiper = new Swiper(".swiper-container", {
     prevEl: ".prev",
   },
 });
+const animationContainer = document.querySelector(".lottie-animation");
 
+// Lottie 애니메이션 로드
+const animation = bodymovin.loadAnimation({
+  container: animationContainer, // 애니메이션을 표시할 요소
+  renderer: "svg", // 애니메이션 렌더링 방식 (svg 또는 canvas)
+  loop: true, // 반복 여부
+  autoplay: true, // 자동 재생 여부
+  path: "js/svg1.json", // 다운로드한 Lottie 파일의 경로
+});
 // function randomSize() {
 //   return Math.random() * 200 + 100; // Adjust the range of random size as needed
 // }
