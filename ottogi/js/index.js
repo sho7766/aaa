@@ -55,6 +55,25 @@ var swiper = new Swiper(".mySwiper", {
   slidesPerView: 3,
   spaceBetween: 40,
 });
+
+// product sec 진입시 마스크 효과
+
+var swiper = new Swiper(".slider", {
+  spaceBetween: 30,
+  centeredSlides: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    type: "fraction",
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
 // const animationContainer = document.querySelector(".lottie-animation");
 
 // // Lottie 애니메이션 로드
