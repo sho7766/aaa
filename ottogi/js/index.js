@@ -59,8 +59,8 @@ var swiper = new Swiper(".mySwiper", {
 // product sec 진입시 마스크 효과
 
 var swiper = new Swiper(".slider", {
-  spaceBetween: 30,
-  centeredSlides: true,
+  // spaceBetween: 30,
+  // effect: "fade",
   autoplay: {
     delay: 2500,
     disableOnInteraction: false,
@@ -71,9 +71,19 @@ var swiper = new Swiper(".slider", {
     type: "fraction",
   },
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    nextEl: ".next",
+    prevEl: ".prev",
   },
+});
+$(".product .pause").click(function () {
+  $(this).css("display", "none");
+  $(".product .play").addClass("on");
+  swiper.autoplay.stop();
+});
+$(".product .play").click(function () {
+  $(".product .pause").css("display", "block");
+  $(".product .play").removeClass("on");
+  swiper.autoplay.start();
 });
 // const animationContainer = document.querySelector(".lottie-animation");
 
