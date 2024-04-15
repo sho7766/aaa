@@ -1039,3 +1039,132 @@ header .inner nav .gnb .sub li:hover a {
   width: 500%;
   height: 500%;
 }
+.product .main_tit {
+  position: absolute;
+  right: 30px;
+  width: 368px;
+  font-size: 64px;
+  line-height: 90px;
+  letter-spacing: -1.92px;
+  text-align: right;
+  text-shadow: 4px 4px 4px #ffed00;
+  margin-left: auto;
+}
+.product .slider {
+  position: relative;
+  /* padding: 0; */
+}
+.product .slider .swiper-slide {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+}
+.product .slider .swiper-slide .text_box {
+  flex: none;
+  width: 434px;
+  min-height: 220px;
+  margin-top: 200px;
+  margin-bottom: 120px;
+  text-align: right;
+  transition: width 0.3s;
+}
+.product .text_box .item {
+  font-size: 26px;
+  line-height: 38px;
+  padding: 5px 30px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.product .text_box .tit {
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 64px;
+  letter-spacing: -1.44px;
+  margin-top: 40px;
+  word-break: keep-all;
+}
+.product .text_box .btn_mall {
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 28px;
+  margin-top: 40px;
+  margin-right: 24px;
+}
+.product .text_box .btn_mall:after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  right: -24px;
+  width: 16px;
+  height: 16px;
+  background: url(../images/ico_arrow.svg);
+}
+.product .text_box .btn_mall:hover {
+  border-bottom: 1px solid #000;
+}
+.product .text_box .btn_mall span {
+  display: inline-block;
+  font-size: 20px;
+  line-height: 28px;
+}
+.product .img_box {
+  flex: none;
+  width: 560px;
+  height: 448px;
+  margin: 60px 0;
+  transition: 0.3s;
+}
+.product .img_box .item_img {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding-top: 79.94%;
+  margin-top: 0;
+  overflow: hidden;
+}
+.product .img_box .item_img img {
+  position: absolute;
+  top: 0;
+}
+.product .slider .controller {
+  position: absolute;
+  left: auto;
+  right: 0;
+  width: auto;
+  height: 90px;
+  margin-left: -124px;
+}
+.product .slider .controller .swiper-pagination {
+  position: relative;
+  order: 2;
+  min-width: 90px;
+  font-size: 40px;
+  font-weight: 300;
+  letter-spacing: -0.8px;
+  line-height: 90px;
+}
+.product .slider .controller .swiper-pagination-current {
+  font-weight: 700;
+  color: #dc2f34;
+}
+.product .slider .controller button {
+  width: 90px;
+  height: 90px;
+  margin-top: -45px;
+}
+.product .slider .controller .prev {
+  background: #fff url(../images/btn_prev.svg) no-repeat 50% 50% / 18px 34px;
+}
+.product .slider .controller .next {
+  background: #fff url(../images/btn_next.svg) no-repeat 50% 50% / 18px 34px;
+}
+.product .slider .controller .prev:before {
+  content: "";
+  position: absolute;
+}

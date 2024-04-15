@@ -65,6 +65,7 @@ var swiper = new Swiper(".slider", {
     delay: 2500,
     disableOnInteraction: false,
   },
+  loop: true,
   pagination: {
     el: ".swiper-pagination",
     type: "fraction",
