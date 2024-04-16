@@ -27,10 +27,9 @@ $(header).mouseleave(function () {
 });
 $(".lang").click(function () {
   $(".dropLang").toggleClass("on");
+  $(".dropLang").css("transition", "all 0.5s");
 });
 //
-
-// 스크롤할때 페이드효과 주기
 
 var swiper = new Swiper(".swiper-container", {
   pagination1: {
@@ -57,10 +56,30 @@ var swiper = new Swiper(".mySwiper", {
 });
 
 // product sec 진입시 마스크 효과
+let product = document.querySelector(".product");
+const bgAni = product.querySelector(".bg_ani");
 
+const options = {
+  root: null,
+  rootMargin: "0px",
+  threshold: 0.5,
+};
+function handleIntersection(entries) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      bgAni.classList.add("on");
+      bgAni.style.transition = "width 4s, height 10s";
+    }
+  });
+}
+
+const observer = new IntersectionObserver(handleIntersection, options);
+observer.observe(product);
+//
+// product sec item slide
 var swiper = new Swiper(".slider", {
   // spaceBetween: 30,
-  // effect: "fade",
+  effect: "fade",
   autoplay: {
     delay: 2500,
     disableOnInteraction: false,
@@ -85,35 +104,23 @@ $(".product .play").click(function () {
   $(".product .play").removeClass("on");
   swiper.autoplay.start();
 });
-// const animationContainer = document.querySelector(".lottie-animation");
+//
 
-// // Lottie 애니메이션 로드
-// const animation = bodymovin.loadAnimation({
-//   container: animationContainer, // 애니메이션을 표시할 요소
-//   renderer: "svg", // 애니메이션 렌더링 방식 (svg 또는 canvas)
-//   loop: true, // 반복 여부
-//   autoplay: true, // 자동 재생 여부
-//   path: "js/svg1.json", // 다운로드한 Lottie 파일의 경로
-// });
-// function randomSize() {
-//   return Math.random() * 200 + 100; // Adjust the range of random size as needed
-// }
-// gsap.to(".global_cont img", {
-//   duration: 1, // Duration of the animation
-//   scaleX: randomSize(), // Random scaleX value
-//   scaleY: randomSize(), // Random scaleY value
-//   ease: "power2.out", // Easing function
-//   onComplete: function () {
-//     // After the animation completes, repeat the animation
-//     gsap.to(".global_cont img", {
-//       duration: 1,
-//       scaleX: randomSize(),
-//       scaleY: randomSize(),
-//       ease: "power2.out",
-//       onComplete: function () {
-//         // Repeat the animation indefinitely
-//         gsap.delayedCall(0, randomSize);
-//       },
-//     });
-//   },
-// });
+// sns sec slider
+$(".sns1").click(function () {
+  $(".cont1").show();
+  $(".cont2").hide();
+  $(".cont3").hide();
+});
+$(".sns2").click(function () {
+  $(".cont1").hide();
+  $(".cont2").show();
+  $(".cont3").hide();
+});
+$(".sns3").click(function () {
+  $(".cont1").hide();
+  $(".cont2").hide();
+  $(".cont3").show();
+});
+
+// 스크롤할때 페이드효과 주기
