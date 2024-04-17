@@ -25,13 +25,19 @@ $(header).mouseleave(function () {
   $(header).removeClass("on");
   $(header).removeClass("off");
 });
-$(".lang").click(function () {
+//
+// 헤더 언어 설정 버튼 클릭 효과
+$(".lang > a").click(function () {
   $(".dropLang").toggleClass("on");
-  $(".dropLang").css("transition", "all 0.5s");
+});
+$(".dropLang ul li:first-child").addClass("on");
+$(".dropLang ul li ").click(function () {
+  $(this).addClass("on").siblings().removeClass("on");
 });
 //
 
-var swiper = new Swiper(".swiper-container", {
+// 메인 비주얼 슬라이드
+var mySwiper = new Swiper(".swiper-container", {
   pagination1: {
     el: ".swiper-pagination-fraction",
     type: "fraction",
@@ -49,13 +55,47 @@ var swiper = new Swiper(".swiper-container", {
     nextEl: ".next",
     prevEl: ".prev",
   },
+  on: {
+    slideChange: function () {
+      var currentPage = this.realIndex + 1;
+      $(".swiper-pagination1 .current").text(formatNumber(currentPage));
+    },
+  },
 });
+function formatNumber(number) {
+  return number < 7 ? "0" + number : number;
+}
+
+$(".main .pause").click(function () {
+  $("video").each(function () {
+    this.pause();
+  });
+  $(this).css("display", "none");
+  $(".main .play").addClass("on");
+  mySwiper.autoplay.stop();
+});
+
+$(".main .play").click(function () {
+  $("video").each(function () {
+    this.play();
+  });
+  $(".main .pause").css("display", "block");
+  $(".main .play").removeClass("on");
+  mySwiper.autoplay.start();
+});
+//
+// esg 섹션 슬라이드
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 3,
   spaceBetween: 40,
 });
+$(".slide1").addClass("on");
+$(".swiper-slide").mouseenter(function () {
+  $(this).addClass("on").siblings().removeClass("on");
+});
+//
 
-// product sec 진입시 마스크 효과
+// product 섹션 진입시 마스크 효과
 let product = document.querySelector(".product");
 const bgAni = product.querySelector(".bg_ani");
 
@@ -72,11 +112,11 @@ function handleIntersection(entries) {
     }
   });
 }
-
 const observer = new IntersectionObserver(handleIntersection, options);
 observer.observe(product);
 //
-// product sec item slide
+
+// product 섹션 슬라이드
 var swiper = new Swiper(".slider", {
   // spaceBetween: 30,
   effect: "fade",
@@ -106,7 +146,7 @@ $(".product .play").click(function () {
 });
 //
 
-// sns sec slider
+// sns 섹션 슬라이드
 $(".sns1").click(function () {
   $(".cont1").show();
   $(".cont2").hide();
@@ -122,5 +162,6 @@ $(".sns3").click(function () {
   $(".cont2").hide();
   $(".cont3").show();
 });
+//
 
 // 스크롤할때 페이드효과 주기
