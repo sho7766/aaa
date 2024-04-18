@@ -84,6 +84,7 @@ $(".main .play").click(function () {
   mySwiper.autoplay.start();
 });
 //
+
 // esg 섹션 슬라이드
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 3,
