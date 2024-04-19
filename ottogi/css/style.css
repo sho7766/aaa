@@ -587,20 +587,12 @@ header .inner nav .gnb .sub li:hover a {
   display: flex;
   padding-top: 180px;
 }
-.info .svg1 {
+.info .one .svg1 {
   position: absolute;
   top: 220px;
   left: 160px;
   margin: 200px auto;
   transform: scale(2);
-  z-index: 9;
-}
-.info .svg2 {
-  position: absolute;
-  top: 200px;
-  right: 150px;
-  margin: 200px auto;
-  transform: scale(1.5);
   z-index: 9;
 }
 .info .txt {
@@ -697,6 +689,14 @@ header .inner nav .gnb .sub li:hover a {
 .info .two {
   position: relative;
   display: flex;
+}
+.info .two .svg2 {
+  position: absolute;
+  top: 200px;
+  right: 150px;
+  margin: 200px auto;
+  transform: scale(1.5);
+  z-index: 9;
 }
 .info .two .txt {
   width: 690px;
