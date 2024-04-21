@@ -108,17 +108,17 @@ ScrollTrigger.create({
   trigger: ".info",
   start: "top 60%",
 });
-// let one = gsap.timeline();
-// one.from(".info .one", {
-//   y: 100,
-//   autoAlpha: 0,
-//   duration: 1,
-// });
-// ScrollTrigger.create({
-//   animation: one,
-//   trigger: ".info",
-//   start: "top 40%",
-// });
+let one = gsap.timeline();
+one.from(".info .one", {
+  y: 100,
+  autoAlpha: 0,
+  duration: 1,
+});
+ScrollTrigger.create({
+  animation: one,
+  trigger: ".info",
+  start: "top 40%",
+});
 let two = gsap.timeline();
 two.from(".info .two", {
   y: 100,
@@ -199,8 +199,8 @@ ScrollTrigger.create({
   trigger: ".global",
   start: "top 20%",
 });
-
-const popAni = document.addEventListener("DOMContentLoaded", function () {
+// popAni 함수 정의
+function popAni() {
   var imgWraps = document.querySelectorAll(".global_cont .img_wrap li");
   var imgWrapArray = Array.prototype.slice.call(imgWraps); // NodeList를 배열로 변환
 
@@ -230,8 +230,17 @@ const popAni = document.addEventListener("DOMContentLoaded", function () {
   shuffledImgWrapArray.forEach(function (imgWrap, index) {
     setTimeout(function () {
       imgWrap.classList.add("on");
-    }, index * 50);
+    }, index * 100);
   });
+}
+
+// ScrollTrigger를 사용하여 popAni 함수가 실행되도록 설정
+ScrollTrigger.create({
+  trigger: ".global",
+  start: "top 20%",
+  onEnter: function () {
+    popAni();
+  },
 });
 
 // esg섹션 스크롤 이벤트
@@ -244,7 +253,7 @@ esgTit.from(".esg .main_tit", {
 ScrollTrigger.create({
   animation: esgTit,
   trigger: ".esg",
-  start: "top 90%",
+  start: "top 80%",
 });
 let esgSlide = gsap.timeline();
 esgSlide.from(".esg .swiper", {
@@ -258,7 +267,6 @@ ScrollTrigger.create({
   start: "top 50%",
 });
 //
-
 // esg 섹션 슬라이드
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 3,
@@ -269,6 +277,64 @@ $(".swiper-slide").mouseenter(function () {
   $(this).addClass("on").siblings().removeClass("on");
 });
 //
+
+//story 섹션 스크롤이벤트
+let storyTit = gsap.timeline();
+storyTit.from(".story .main_tit", {
+  y: 100,
+  autoAlpha: 0,
+  duration: 1,
+});
+ScrollTrigger.create({
+  animation: storyTit,
+  trigger: ".story",
+  start: "top 80%",
+});
+let ottogi = gsap.timeline();
+ottogi.from(".story .ottogi", {
+  y: 100,
+  autoAlpha: 0,
+  duration: 1,
+});
+ScrollTrigger.create({
+  animation: ottogi,
+  trigger: ".story .main_tit ",
+  start: "top 40%",
+  markers: true,
+});
+let brandStory = gsap.timeline();
+brandStory.from(".story .brand_story", {
+  y: 100,
+  autoAlpha: 0,
+  duration: 1,
+});
+ScrollTrigger.create({
+  animation: brandStory,
+  trigger: ".story .main_tit",
+  start: "top 20%",
+});
+let desc = gsap.timeline();
+desc.from(".story .desc", {
+  y: 100,
+  autoAlpha: 0,
+  duration: 1,
+});
+ScrollTrigger.create({
+  animation: desc,
+  trigger: ".story .main_tit",
+  start: "top 10%",
+});
+let btnMore = gsap.timeline();
+btnMore.from(".story .btn_more", {
+  y: 100,
+  autoAlpha: 0,
+  duration: 1,
+});
+ScrollTrigger.create({
+  animation: btnMore,
+  trigger: ".story .txt_wrap",
+  start: "top 40%",
+});
 
 // product 섹션 진입시 마스크 효과
 let product = document.querySelector(".product");
@@ -321,22 +387,133 @@ $(".product .play").click(function () {
 });
 //
 
-// sns 섹션 슬라이드
+// news 섹션 스크롤 이벤트
+let newsTit = gsap.timeline();
+newsTit.from(".news .main_tit", {
+  y: 100,
+  autoAlpha: 0,
+  duration: 1,
+});
+ScrollTrigger.create({
+  animation: newsTit,
+  trigger: ".news",
+  start: "top 70%",
+});
+let boxTit = gsap.timeline();
+boxTit.from(".news .box_tit", {
+  y: 100,
+  autoAlpha: 0,
+  duration: 1,
+});
+ScrollTrigger.create({
+  animation: boxTit,
+  trigger: ".news",
+  start: "top 60%",
+});
+let newSlider = gsap.timeline();
+newSlider.from(".news .news_slider", {
+  y: 100,
+  autoAlpha: 0,
+  duration: 1,
+});
+ScrollTrigger.create({
+  animation: newSlider,
+  trigger: ".news",
+  start: "top 38%",
+});
+let newsMore = gsap.timeline();
+newsMore.from(".news .btn_more a", {
+  y: 100,
+  autoAlpha: 0,
+  duration: 1,
+});
+ScrollTrigger.create({
+  animation: newsMore,
+  trigger: ".news",
+  start: "top 50%",
+});
+//
+
+// recipe 섹션 스크롤 이벤트
+let recipeTit = gsap.timeline();
+recipeTit.from(".recipe h4.txt", {
+  y: 100,
+  autoAlpha: 0,
+  duration: 1,
+});
+ScrollTrigger.create({
+  animation: recipeTit,
+  trigger: ".recipe",
+  start: "top 80%",
+});
+let recipe = gsap.timeline();
+recipe
+  .from(
+    ".recipe .desc",
+    {
+      y: 100,
+      autoAlpha: 0,
+      duration: 1,
+    },
+    "same"
+  )
+  .from(".recipe_slider", { y: 100, autoAlpha: 0, duration: 1 }, "same");
+ScrollTrigger.create({
+  animation: recipe,
+  trigger: ".recipe",
+  start: "top 70%",
+});
+//
+// sns 섹션 스크롤 이벤트
+let snsTit = gsap.timeline();
+snsTit.from(".sns .txt", { y: 100, autoAlpha: 0, duration: 1 });
+ScrollTrigger.create({
+  animation: snsTit,
+  trigger: ".sns",
+  start: "top 70%",
+});
+let sns = gsap.timeline();
+sns
+  .from(".sns .tab_icon", { y: 50, autoAlpha: 0, duration: 1 }, "up")
+  .from(".sns .btn_more a", { y: 50, autoAlpha: 0, duration: 1 }, "up");
+ScrollTrigger.create({
+  animation: sns,
+  trigger: ".sns",
+  start: "top 60%",
+});
+
+// sns 섹션 아이콘 클릭 이벤트
+$(".tab_icon ul li:first-child").addClass("on");
+$(".sns .tab_icon ul li").click(function () {
+  $(this).addClass("on").siblings().removeClass("on");
+});
 $(".sns1").click(function () {
   $(".cont1").show();
   $(".cont2").hide();
   $(".cont3").hide();
+  let sns1 = gsap.timeline();
+  sns1.from(".sns .cont1", { y: 100, autoAlpha: 0, duration: 1 });
 });
 $(".sns2").click(function () {
   $(".cont1").hide();
   $(".cont2").show();
   $(".cont3").hide();
+  let sns2 = gsap.timeline();
+  sns2.from(".sns .cont2", { y: 100, autoAlpha: 0, duration: 1 });
 });
 $(".sns3").click(function () {
   $(".cont1").hide();
   $(".cont2").hide();
   $(".cont3").show();
+  let sns3 = gsap.timeline();
+  sns3.from(".sns .cont3", { y: 100, autoAlpha: 0, duration: 1 });
 });
 //
 
-// 스크롤할때 페이드효과 주기
+// 고정버튼
+$(".fixed_float .btn_open").click(function () {
+  $(".fixed_float").addClass("on");
+});
+$(".fixed_float .btn_close").click(function () {
+  $(".fixed_float").removeClass("on");
+});

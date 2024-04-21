@@ -46,6 +46,10 @@ body {
 .font_yellow::selection {
   color: #ffed00;
 }
+button {
+  border: 0;
+  cursor: pointer;
+}
 .top_menu {
   position: absolute;
   top: 0;
@@ -509,18 +513,6 @@ header .inner nav .gnb .sub li:hover a {
   background: url(../images/btn_prev_main_hover.svg) no-repeat 50% 50% / 100%
     100%;
 }
-.main .btn_plus {
-  width: 54px;
-  height: 80px;
-  position: fixed;
-  bottom: 40%;
-  right: 0;
-  background: url(../images/btn_floating_open.svg) no-repeat;
-  border: none;
-  transition: all 0.3s;
-  cursor: pointer;
-  z-index: 1;
-}
 .btn_more {
   margin-top: 40px;
   width: 100%;
@@ -584,14 +576,14 @@ header .inner nav .gnb .sub li:hover a {
   margin-top: 100px;
 }
 .info .one {
+  position: relative;
   display: flex;
   padding-top: 180px;
 }
 .info .one .svg1 {
   position: absolute;
-  top: 220px;
-  left: 160px;
-  margin: 200px auto;
+  top: 40px;
+  left: 150px;
   transform: scale(2);
   z-index: 9;
 }
@@ -692,9 +684,8 @@ header .inner nav .gnb .sub li:hover a {
 }
 .info .two .svg2 {
   position: absolute;
-  top: 200px;
-  right: 150px;
-  margin: 200px auto;
+  top: 360px;
+  right: 70px;
   transform: scale(1.5);
   z-index: 9;
 }
@@ -993,6 +984,7 @@ header .inner nav .gnb .sub li:hover a {
   right: 19.27%;
 }
 .story .txt_wrap .ottogi {
+  display: block;
   color: #fff;
   font-size: 180px;
   line-height: 240px;
@@ -1490,7 +1482,7 @@ header .inner nav .gnb .sub li:hover a {
 .sns .inner .tab_icon ul li .sns3 {
   background-image: url(../images/ico_sns3.svg);
 }
-.sns .inner .tab_icon ul li.on {
+.sns .inner .tab_icon ul li.on button {
   color: #000;
   font-weight: 500;
 }
@@ -1738,4 +1730,65 @@ footer .inner .f_cont {
   line-height: 20px;
   color: #666;
   margin-top: 10px;
+}
+/* footer end*/
+/* fixed_float start */
+.fixed_float {
+  position: fixed;
+  right: -300px;
+  bottom: calc(var(--vh, 1vh) * 25);
+  width: 300px;
+  transition: all 0.3s;
+  z-index: 9999;
+}
+.fixed_float.on {
+  right: 20px;
+}
+.fixed_float .btn_open {
+  display: block;
+  position: fixed;
+  right: 0;
+  bottom: 40%;
+  width: 54px;
+  height: 80px;
+  background: url(../images/btn_floating_open.svg) no-repeat 0 0 / 100% 100%;
+  transition: all 0.3s;
+}
+.fixed_float.on .btn_open {
+  right: -54px;
+}
+.fixed_float .img_wrap {
+  position: relative;
+}
+.fixed_float .img_wrap a {
+  position: relative;
+  display: block;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}
+.fixed_float .img_wrap img {
+  width: 100%;
+  vertical-align: middle;
+}
+.fixed_float .btn_close {
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: -56px;
+  width: 40px;
+  height: 40px;
+  background: url(../images/btn_floating_close.svg) no-repeat 0 0 / 100% 100%;
+}
+.go_top {
+  position: fixed;
+  right: 10px;
+  bottom: 20px;
+  width: 80px;
+}
+.go_top a {
+  display: block;
+  width: 80px;
+  height: 72px;
+  background: url(../images/btn_top_pc.svg) no-repeat 0 0 / 100% 100%;
+  filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.15));
 }
