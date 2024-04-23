@@ -152,6 +152,17 @@ ScrollTrigger.create({
   trigger: ".info .two",
   start: "top 20%",
 });
+let svg3 = gsap.timeline();
+svg3.from(".info .svg3", {
+  y: 100,
+  autoAlpha: 0,
+  duration: 0.5,
+});
+ScrollTrigger.create({
+  animation: three,
+  trigger: ".info .two",
+  start: "top 20%",
+});
 //
 
 // global 섹션 스크롤 이벤트

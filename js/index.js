@@ -324,3 +324,15 @@ $(".nav li").click(function (e) {
     ScrollTrigger.refresh();
   }, 1000);
 });
+var swiper = new Swiper(".mySwiper", {
+  pagination: {
+    el: ".swiper-pagination",
+  },
+});
+
+var swiper = new Swiper(".swiper-container", {
+  direction: "vertical", // 수직 스크롤
+  slidesPerView: "auto", // 자동으로 페이지 크기 설정
+  freeMode: true, // 자유롭게 슬라이드
+  mousewheel: true, // 마우스 휠 이벤트 활성화
+});

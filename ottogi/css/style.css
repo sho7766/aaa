@@ -699,8 +699,19 @@ header .inner nav .gnb .sub li:hover a {
   display: flex;
   height: 477px;
 }
+.info .three .thumb {
+  position: relative;
+}
 .info .three .txt {
   padding: 194px 113px;
+}
+.info .three .svg3 {
+  position: absolute;
+  left: -18px;
+  bottom: -85px;
+  width: 410px;
+  height: 285px;
+  transform: scale(1.3);
 }
 /* info sec end */
 /* global start */
@@ -943,12 +954,12 @@ header .inner nav .gnb .sub li:hover a {
   text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
 }
 .esg .swiper-slide .txt_wrap .desc {
-  max-width: 240px;
+  width: 240px;
   margin-top: 50px;
   opacity: 0;
 }
 .esg .swiper-slide.on .txt_wrap .desc {
-  max-width: 430px;
+  width: 430px;
   margin-top: 40px;
   opacity: 1;
   transition: opacity 0.3s;

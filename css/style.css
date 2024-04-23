@@ -44,7 +44,7 @@ header {
   display: flex;
 }
 .nav li {
-  margin-right: 75px;
+  margin-left: 105px;
 }
 .nav li a {
   color: #333;
@@ -111,7 +111,7 @@ header {
   bottom: -40px;
   left: 450px;
   color: #ddea8e;
-  font-size: 100px;
+  font-size: 90px;
 }
 .profile .left .tit p:nth-child(2) {
   margin-left: 210px;
@@ -175,19 +175,33 @@ header {
 .profile .right .skills ul li + li {
   margin-top: 15px;
 }
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .work1,
+.work2,
 .work3 {
   position: relative;
   width: 100%;
   height: 100%;
 }
 .work1 h1,
+.work2 h1,
 .work3 h1 {
   font-size: 70px;
   color: #75a939;
   padding: 110px 0 0 170px;
 }
 .work1 .thumb,
+.work2 .thumb,
 .work3 .thumb {
   position: relative;
   width: 583px;
@@ -195,11 +209,13 @@ header {
   margin: 50px 0 0 150px;
 }
 .work1 .thumb .mokup,
+.work2 .thumb .mokup,
 .work3 .thumb .mokup {
   width: 100%;
   height: 100%;
 }
 .work1 .thumb .mokup img,
+.work2 .thumb .mokup img,
 .work3 .thumb .mokup img {
   position: relative;
   width: 100%;
@@ -207,6 +223,7 @@ header {
   object-fit: cover;
 }
 .work1 .thumb a,
+.work2 .thumb a,
 .work3 .thumb a {
   position: absolute;
   top: 70px;
@@ -215,6 +232,7 @@ header {
   height: 310px;
 }
 .work1 .thumb a img,
+.work2 .thumb a img,
 .work3 .thumb a img {
   position: relative;
   width: 100%;
@@ -223,6 +241,7 @@ header {
   border-radius: 5px;
 }
 .work1 .thumb a:before,
+.work2 .thumb a:before,
 .work3 .thumb a:before {
   position: absolute;
   top: 0;
@@ -235,6 +254,7 @@ header {
   opacity: 0;
 }
 .work1 .thumb a:hover:before,
+.work2 .thumb a:hover:before,
 .work3 .thumb a:hover:before {
   position: absolute;
   top: 0;
@@ -248,6 +268,7 @@ header {
   transition: opacity 0.6s;
 }
 .work1 .work_info,
+.work2 .work_info,
 .work3 .work_info {
   position: absolute;
   top: 0;
@@ -255,6 +276,7 @@ header {
   padding: 300px 330px 0 0;
 }
 .work1 .work_info .tit,
+.work2 .work_info .tit,
 .work3 .work_info .tit {
   padding-top: 70px;
 }
@@ -274,11 +296,13 @@ header {
   margin-top: 8px;
 }
 .work1 .desc,
+.work2 .desc,
 .work3 .desc {
   padding-top: 50px;
   color: #333;
 }
 .work1 .desc p:first-child,
+.work2 .desc p:first-child,
 .work3 .desc p:first-child {
   margin-bottom: 20px;
   font-size: 18px;
@@ -291,6 +315,7 @@ header {
   line-height: 1.4;
 }
 .work1 .proto p,
+.work2 .proto p,
 .work3 .proto p {
   display: inline-block;
   text-transform: uppercase;
@@ -300,11 +325,13 @@ header {
   font-weight: 700;
 }
 .work1 .proto span,
+.work2 .proto span,
 .work3 .proto span {
   margin-left: 20px;
   color: #333;
 }
 .work1 .library p,
+.work2 .library p,
 .work3 .library p {
   display: inline-block;
   text-transform: uppercase;
@@ -314,81 +341,10 @@ header {
   font-weight: 700;
 }
 .work1 .library span,
+.work2 .library span,
 .work3 .library span {
   margin-left: 20px;
   color: #333;
-}
-.work2 {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-.work2 h1 {
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-size: 70px;
-  color: #75a939;
-  padding: 110px 240px 0 0;
-}
-.work2 .thumb {
-  position: absolute;
-  width: 583px;
-  height: 674px;
-  top: 25%;
-  right: 220px;
-}
-.work2 .thumb a {
-  position: absolute;
-  top: 70px;
-  left: 20px;
-  width: 545px;
-  height: 310px;
-}
-.work2 .thumb .mokup {
-  width: 100%;
-  height: 100%;
-}
-.work2 .thumb .mokup img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.work2 .thumb a img {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 5px;
-}
-.work2 .thumb a:before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: "";
-  width: 100%;
-  height: 100%;
-  background: #dfd5b9;
-  z-index: 99;
-  opacity: 0;
-}
-.work2 .thumb a:hover:before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: "";
-  width: 100%;
-  height: 100%;
-  background: #dfd5b9;
-  z-index: 99;
-  opacity: 0.5;
-  transition: opacity 0.6s;
-}
-.work2 .work_info {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 290px 0 0 330px;
 }
 .work2 .work_info .tit {
   padding-top: 70px;
@@ -403,48 +359,10 @@ header {
   height: 20px;
   background-color: #75a939;
   opacity: 0.5;
-  top: 50%;
-  left: 42%;
+  top: 48.5%;
+  left: -2%;
   z-index: -1;
   margin-top: 12px;
-}
-.work2 .desc {
-  padding-top: 50px;
-  color: #333;
-}
-.work2 .desc p:first-child {
-  margin-bottom: 20px;
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
-}
-.work2 .desc p:last-child {
-  margin-top: 15px;
-  line-height: 1.4;
-}
-.work2 .proto p {
-  display: inline-block;
-  text-transform: uppercase;
-  margin-top: 60px;
-  color: #75a939;
-  font-size: 18px;
-  font-weight: 700;
-}
-.work2 .proto span {
-  margin-left: 20px;
-  color: #333;
-}
-.work2 .library p {
-  display: inline-block;
-  text-transform: uppercase;
-  margin-top: 70px;
-  color: #75a939;
-  font-size: 18px;
-  font-weight: 700;
-}
-.work2 .library span {
-  margin-left: 20px;
-  color: #333;
 }
 .work3 .work_info .tit img {
   position: relative;
@@ -494,9 +412,12 @@ header {
     left: 430px;
     bottom: -25px;
   }
-  .profile .right div {
+  .profile .right {
     margin-top: 65px;
-    margin-left: 50px;
+  }
+  .profile .right > div {
+    margin-top: 0;
+    margin-left: -100px;
   }
   .profile .right div .circle {
     width: 8px;
@@ -507,24 +428,16 @@ header {
     margin-left: 10px;
     font-size: 24px;
   }
-  .profile .right .name p:nth-child(3) {
-    font-size: 18px;
-    margin-left: 20px;
+  .profile .right .name {
+    display: none;
   }
   .profile .right .age {
-    margin-top: 20px;
-    float: left;
-  }
-  .profile .right .age p:nth-child(3) {
-    font-size: 18px;
-  }
-  .profile .right .age p:nth-child(3) {
-    margin-left: 45px;
+    display: none;
   }
   .profile .right .skills {
     float: left;
     margin-top: -32px;
-    margin-left: 80px;
+    margin-left: -80px;
   }
   .profile .right .skills ul li {
     font-size: 18px;
@@ -538,7 +451,7 @@ header {
   .profile .right .skills ul li:nth-of-type(3) {
     position: absolute;
     top: -12px;
-    left: 50%;
+    left: 40%;
     margin-left: 100px;
   }
   .profile .right .skills ul li:nth-of-type(5) {
@@ -554,10 +467,12 @@ header {
     margin-left: 50px;
   }
   .work1 h1,
+  .work2 h1,
   .work3 h1 {
     padding: 140px 0 0 170px;
   }
   .work1 .thumb,
+  .work2 .thumb,
   .work3 .thumb {
     position: relative;
     width: 583px;
@@ -565,15 +480,12 @@ header {
     margin: 0 0 0 150px;
   }
   .work1 .work_info {
-    padding: 300px 230px 0 0;
+    padding: 300px 180px 0 0;
   }
   .work2 .work_info {
-    padding: 260px 0 0 200px;
+    padding: 260px 150px 0 0;
   }
-  .work2 .work_info .tit .highlight {
-    left: 30%;
-    top: 48%;
-  }
+
   .work3 .work_info {
     padding: 300px 200px 0 0;
   }
