@@ -109,7 +109,6 @@ ScrollTrigger.create({
   animation: work1,
   trigger: ".work1",
   start: "top 1%",
-  // scrub: true,
   pin: true,
   onLeave: () => {
     $(".nav li a").removeClass("on");
@@ -130,7 +129,7 @@ ScrollTrigger.create({
 let work2 = gsap.timeline();
 work2
   .from(".work2 h1", {
-    x: 20,
+    x: -20,
     autoAlpha: 0,
   })
   .to(".work2 .tit .highlight", { width: 308, delay: 0.2 });
@@ -139,15 +138,15 @@ ScrollTrigger.create({
   trigger: ".work2",
   start: "top 1%",
   pin: true,
+  onEnter: () => {
+    $(".nav li").eq(2).find("a").addClass("on");
+  },
   onLeave: () => {
-    $(".nav li a").removeClass("on");
-    $(".nav li").eq(4).find("a").addClass("on");
     const nextSection = $(".work3");
     const scrollTop = nextSection.offset().top;
-    $("html, body").stop().animate({ scrollTop: scrollTop }, 500);
+    $("html, body").animate({ scrollTop: scrollTop }, 500);
   },
   onLeaveBack: () => {
-    $(".nav li a").removeClass("on");
     $(".nav li").eq(2).find("a").addClass("on");
     const prevSection = $(".work1");
     const scrollTop = prevSection.offset().top;
@@ -165,12 +164,40 @@ ScrollTrigger.create({
   animation: work3,
   trigger: ".work3",
   start: "top 1%",
-  // scrub: true,
   pin: true,
+  onEnter: () => {
+    $(".nav li").eq(2).find("a").addClass("on");
+  },
+  onLeave: () => {
+    const nextSection = $(".work4");
+    const scrollTop = nextSection.offset().top;
+    $("html, body").animate({ scrollTop: scrollTop }, 500);
+  },
   onLeaveBack: () => {
-    $(".nav li a").removeClass("on");
-    $(".nav li").eq(3).find("a").addClass("on");
+    $(".nav li").eq(2).find("a").addClass("on");
     const prevSection = $(".work2");
+    const scrollTop = prevSection.offset().top;
+    $("html, body").stop().animate({ scrollTop: scrollTop }, 500);
+  },
+});
+let work4 = gsap.timeline();
+work4
+  .from(".work4 h1", {
+    x: -20,
+    autoAlpha: 0,
+  })
+  .to(".work4 .tit .highlight", { width: 158, delay: 0.2 });
+ScrollTrigger.create({
+  animation: work4,
+  trigger: ".work4",
+  start: "top 1%",
+  pin: true,
+  onEnter: () => {
+    $(".nav li").eq(2).find("a").addClass("on");
+  },
+  onLeaveBack: () => {
+    $(".nav li").eq(2).find("a").addClass("on");
+    const prevSection = $(".work3");
     const scrollTop = prevSection.offset().top;
     $("html, body").stop().animate({ scrollTop: scrollTop }, 500);
   },
@@ -200,12 +227,6 @@ $(".nav li").click(function (e) {
   } else if (idx === 2) {
     $("html, body").stop().animate({ scrollTop: sectionPositions[2] }, 500);
     work1.restart();
-  } else if (idx === 3) {
-    $("html, body").stop().animate({ scrollTop: sectionPositions[3] }, 500);
-    work2.restart();
-  } else if (idx === 4) {
-    $("html, body").stop().animate({ scrollTop: sectionPositions[4] }, 500);
-    work3.restart();
   }
   $(".nav li a").removeClass("on");
   $(".nav li").eq(idx).find("a").addClass("on");
@@ -283,7 +304,6 @@ $(".nav li").click(function (e) {
       trigger: ".work2",
       start: "top 1%",
       end: "70% 50%",
-      //scrub: true,
       onEnter: () => {
         $(".nav li a").removeClass("on");
         $(".nav li").eq(3).find("a").addClass("on");
@@ -323,16 +343,4 @@ $(".nav li").click(function (e) {
     });
     ScrollTrigger.refresh();
   }, 1000);
-});
-var swiper = new Swiper(".mySwiper", {
-  pagination: {
-    el: ".swiper-pagination",
-  },
-});
-
-var swiper = new Swiper(".swiper-container", {
-  direction: "vertical", // 수직 스크롤
-  slidesPerView: "auto", // 자동으로 페이지 크기 설정
-  freeMode: true, // 자유롭게 슬라이드
-  mousewheel: true, // 마우스 휠 이벤트 활성화
 });

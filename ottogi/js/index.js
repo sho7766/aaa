@@ -311,7 +311,6 @@ ScrollTrigger.create({
   animation: ottogi,
   trigger: ".story .main_tit ",
   start: "top 40%",
-  markers: true,
 });
 let brandStory = gsap.timeline();
 brandStory.from(".story .brand_story", {

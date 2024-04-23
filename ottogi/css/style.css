@@ -962,7 +962,7 @@ header .inner nav .gnb .sub li:hover a {
   width: 430px;
   margin-top: 40px;
   opacity: 1;
-  transition: opacity 0.3s;
+  transition: opacity 1s;
 }
 .esg .swiper-slide .txt_wrap .desc p {
   word-break: keep-all;
