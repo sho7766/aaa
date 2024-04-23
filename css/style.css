@@ -274,7 +274,7 @@ section .library span {
   position: absolute;
   top: 0;
   right: 0;
-  padding: 300px 230px 0 0;
+  padding: 320px 230px 0 0;
 }
 .work1 .work_info .tit img {
   position: relative;
@@ -286,7 +286,7 @@ section .library span {
   height: 20px;
   background-color: #75a939;
   opacity: 0.5;
-  top: 49%;
+  top: 50.5%;
   left: 0;
   z-index: -1;
   margin-top: 8px;
