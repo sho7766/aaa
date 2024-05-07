@@ -527,3 +527,16 @@ $(".fixed_float .btn_open").click(function () {
 $(".fixed_float .btn_close").click(function () {
   $(".fixed_float").removeClass("on");
 });
+
+// top 버튼
+$(".go_top").click(function () {
+  $("html, body").animate({ scrollTop: 0 }, 300);
+});
+
+$(window).scroll(function () {
+  if ($(this).scrollTop() > 500) {
+    $(".go_top a").addClass("on");
+  } else {
+    $(".go_top a").removeClass("on");
+  }
+});
