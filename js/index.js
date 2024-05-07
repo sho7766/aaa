@@ -81,6 +81,7 @@ ScrollTrigger.create({
   animation: profile,
   trigger: ".profile",
   start: "top 1%",
+  end: "70% 50%",
   pin: true,
   onLeave: () => {
     $(".nav li a").removeClass("on");
@@ -109,10 +110,11 @@ ScrollTrigger.create({
   animation: work1,
   trigger: ".work1",
   start: "top 1%",
+  end: "70% 50%",
   pin: true,
   onLeave: () => {
     $(".nav li a").removeClass("on");
-    $(".nav li").eq(3).find("a").addClass("on");
+    $(".nav li").eq(2).find("a").addClass("on");
     const nextSection = $(".work2");
     const scrollTop = nextSection.offset().top;
     $("html, body").stop().animate({ scrollTop: scrollTop }, 500);
@@ -137,6 +139,7 @@ ScrollTrigger.create({
   animation: work2,
   trigger: ".work2",
   start: "top 1%",
+  end: "70% 50%",
   pin: true,
   onEnter: () => {
     $(".nav li").eq(2).find("a").addClass("on");
@@ -164,6 +167,7 @@ ScrollTrigger.create({
   animation: work3,
   trigger: ".work3",
   start: "top 1%",
+  end: "70% 50%",
   pin: true,
   onEnter: () => {
     $(".nav li").eq(2).find("a").addClass("on");
@@ -191,6 +195,8 @@ ScrollTrigger.create({
   animation: work4,
   trigger: ".work4",
   start: "top 1%",
+  end: "70% 50%",
+  markers: true,
   pin: true,
   onEnter: () => {
     $(".nav li").eq(2).find("a").addClass("on");
@@ -286,7 +292,7 @@ $(".nav li").click(function (e) {
       },
       onLeave: () => {
         $(".nav li a").removeClass("on");
-        $(".nav li").eq(3).find("a").addClass("on");
+        $(".nav li").eq(1).find("a").addClass("on");
         const nextSection = $(".work2");
         const scrollTop = nextSection.offset().top;
         $("html, body").stop().animate({ scrollTop: scrollTop }, 500);
@@ -306,11 +312,11 @@ $(".nav li").click(function (e) {
       end: "70% 50%",
       onEnter: () => {
         $(".nav li a").removeClass("on");
-        $(".nav li").eq(3).find("a").addClass("on");
+        $(".nav li").eq(2).find("a").addClass("on");
       },
       onLeave: () => {
         $(".nav li a").removeClass("on");
-        $(".nav li").eq(4).find("a").addClass("on");
+        $(".nav li").eq(2).find("a").addClass("on");
         const nextSection = $(".work3");
         const scrollTop = nextSection.offset().top;
         $("html, body").stop().animate({ scrollTop: scrollTop }, 500);
@@ -328,15 +334,27 @@ $(".nav li").click(function (e) {
       trigger: ".work3",
       start: "top 1%",
       end: "70% 50%",
-      //scrub: true,
       onEnter: () => {
-        $(".nav li a").removeClass("on");
-        $(".nav li").eq(4).find("a").addClass("on");
+        $(".nav li").eq(2).find("a").addClass("on");
       },
       onLeaveBack: () => {
-        $(".nav li a").removeClass("on");
-        $(".nav li").eq(3).find("a").addClass("on");
+        $(".nav li").eq(2).find("a").addClass("on");
         const prevSection = $(".work2");
+        const scrollTop = prevSection.offset().top;
+        $("html, body").stop().animate({ scrollTop: scrollTop }, 500);
+      },
+    });
+    ScrollTrigger.create({
+      animation: work4,
+      trigger: ".work4",
+      start: "top 1%",
+      end: "70% 50%",
+      onEnter: () => {
+        $(".nav li").eq(2).find("a").addClass("on");
+      },
+      onLeaveBack: () => {
+        $(".nav li").eq(2).find("a").addClass("on");
+        const prevSection = $(".work3");
         const scrollTop = prevSection.offset().top;
         $("html, body").stop().animate({ scrollTop: scrollTop }, 500);
       },
