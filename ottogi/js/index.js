@@ -532,7 +532,6 @@ $(".fixed_float .btn_close").click(function () {
 $(".go_top").click(function () {
   $("html, body").animate({ scrollTop: 0 }, 300);
 });
-
 $(window).scroll(function () {
   if ($(this).scrollTop() > 500) {
     $(".go_top a").addClass("on");
